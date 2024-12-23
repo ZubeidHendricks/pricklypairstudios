@@ -9,7 +9,8 @@ Official website for Prickly Pair Studios, showcasing our innovative technology 
 - Sections:
   * Hero Introduction
   * About Us
-  * Projects Showcase
+  * Solutions Overview
+  * Featured Projects
   * Technology Stack
   * Contact Information
 
