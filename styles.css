@@ -1,0 +1,15 @@
+/* Custom styles for Prickly Pair Studios */
+:root {
+    --desert-green: #4CAF50;
+    --desert-sand: #F5DEB3;
+    --cactus-green: #2E8B57;
+}
+
+/* Additional custom styles can be added here */
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+}

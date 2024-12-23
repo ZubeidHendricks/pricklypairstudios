@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prickly Pair Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'desert-green': '#4CAF50',
+                        'desert-sand': '#F5DEB3',
+                        'cactus-green': '#2E8B57'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #F5F5F5;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-desert-green text-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold">Prickly Pair Studios</div>
+            <div class="space-x-4">
+                <a href="#about" class="hover:text-desert-sand">About</a>
+                <a href="#projects" class="hover:text-desert-sand">Projects</a>
+                <a href="#contact" class="hover:text-desert-sand">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-cover bg-center h-[500px] relative" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto relative z-10 text-center text-white flex flex-col justify-center h-full">
+            <h1 class="text-5xl font-bold mb-4">Prickly Pair Studios</h1>
+            <p class="text-xl">Creative Technology Solutions in the Heart of Innovation</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 text-desert-green">About Us</h2>
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-lg leading-relaxed">
+                    Prickly Pair Studios is a dynamic technology studio that thrives on innovation and creative problem-solving. 
+                    We specialize in developing unique software solutions that stand out in the digital landscape, 
+                    much like the resilient and distinctive cactus that inspired our name.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-desert-green">Our Projects</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+                    <h3 class="text-2xl font-semibold mb-4 text-cactus-green">LinguaLearn</h3>
+                    <p>An AI-powered multilingual learning platform that preserves indigenous languages through advanced technology.</p>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+                    <h3 class="text-2xl font-semibold mb-4 text-cactus-green">Collaborative Commerce</h3>
+                    <p>Innovative platforms that redefine online shopping with synchronized browsing and real-time collaboration.</p>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+                    <h3 class="text-2xl font-semibold mb-4 text-cactus-green">Crypto Solutions</h3>
+                    <p>Advanced cryptocurrency arbitrage platforms with automated trading and multi-exchange support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-desert-green">Our Technology Stack</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="bg-gray-100 px-4 py-2 rounded-full">Blazor</div>
+                <div class="bg-gray-100 px-4 py-2 rounded-full">CrewAI</div>
+                <div class="bg-gray-100 px-4 py-2 rounded-full">Llama 3.1</div>
+                <div class="bg-gray-100 px-4 py-2 rounded-full">Blockchain</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-desert-green text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Let's Create Something Amazing</h2>
+            <p class="mb-8 text-xl">Got a project in mind? We'd love to hear from you!</p>
+            <a href="mailto:contact@pricklypairstudios.com" class="bg-white text-desert-green px-8 py-3 rounded-full hover:bg-gray-100">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-desert-sand">Privacy Policy</a>
+                <a href="#" class="hover:text-desert-sand">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
