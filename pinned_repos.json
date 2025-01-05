@@ -1,0 +1,22 @@
+{
+    "pinnedRepositories": [
+        {
+            "name": "CrewAI",
+            "description": "Advanced AI-driven development and collaboration tools",
+            "stars": 100,
+            "url": "https://github.com/ZubeidHendricks/crewai"
+        },
+        {
+            "name": "AI-Projects",
+            "description": "Innovative artificial intelligence and machine learning projects",
+            "stars": 75,
+            "url": "https://github.com/ZubeidHendricks/ai-projects"
+        },
+        {
+            "name": "Web-Dev-Tools",
+            "description": "Cutting-edge web development and automation tools",
+            "stars": 50,
+            "url": "https://github.com/ZubeidHendricks/web-dev-tools"
+        }
+    ]
+}
