@@ -3,6 +3,9 @@
 ## Overview
 Official website for Prickly Pair Studios, showcasing our innovative technology solutions.
 
+## Contact
+**Email:** pricklypairstudiosza@gmail.com
+
 ## Features
 - Responsive Design
 - Tailwind CSS Styling
@@ -27,3 +30,6 @@ Modify content and styling in the `index.html` file.
 
 ## License
 All rights reserved by Prickly Pair Studios
+
+## Contact Information
+For any inquiries, collaborations, or questions, please email us at pricklypairstudiosza@gmail.com

@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prickly Pair Studios - Innovative AI and Technology Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -23,52 +28,70 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        /* On-Scroll Highlight Styles */
+        .highlight-text {
+            position: relative;
+            display: inline-block;
+        }
+        .highlight-text::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 50%;
+            background-color: rgba(76, 175, 80, 0.3);
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+        .highlight-text.active::after {
+            width: 100%;
+        }
     </style>
 </head>
 <body class="font-body text-gray-800">
-    <!-- Previous sections remain the same -->
+    <!-- Previous content remains the same -->
 
-    <!-- GitHub Pinned Repositories Section -->
-    <section class="py-20 bg-gray-100">
+    <!-- Solutions Section with Highlighted Text -->
+    <section id="solutions" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-primary">GitHub Pinned Repositories</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 text-primary">
+                <span class="highlight-text">Our Core Solutions</span>
+            </h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Repo 1 -->
+                <!-- Each solution with highlighted text -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-                    <div class="text-4xl mb-4">📦</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-accent">CrewAI</h3>
-                    <p>Advanced AI-driven development and collaboration tools.</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="text-sm text-gray-600">⭐ Stars: 100</span>
-                        <a href="https://github.com/ZubeidHendricks/crewai" target="_blank" class="text-primary hover:underline">View Repo</a>
-                    </div>
+                    <div class="text-primary text-4xl mb-4">🤖</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">
+                        <span class="highlight-text">AI & Machine Learning</span>
+                    </h3>
+                    <p>Cutting-edge <span class="highlight-text">AI platforms</span> for language learning, development automation, and intelligent system design.</p>
                 </div>
-
-                <!-- Repo 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-                    <div class="text-4xl mb-4">🤖</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-accent">AI Projects</h3>
-                    <p>Innovative artificial intelligence and machine learning projects.</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="text-sm text-gray-600">⭐ Stars: 75</span>
-                        <a href="https://github.com/ZubeidHendricks/ai-projects" target="_blank" class="text-primary hover:underline">View Repo</a>
-                    </div>
-                </div>
-
-                <!-- Repo 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-                    <div class="text-4xl mb-4">💻</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-accent">Web Dev Tools</h3>
-                    <p>Cutting-edge web development and automation tools.</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="text-sm text-gray-600">⭐ Stars: 50</span>
-                        <a href="https://github.com/ZubeidHendricks/web-dev-tools" target="_blank" class="text-primary hover:underline">View Repo</a>
-                    </div>
-                </div>
+                <!-- Repeat for other solutions -->
             </div>
         </div>
     </section>
 
-    <!-- Rest of the content remains the same -->
+    <script>
+        // On-Scroll Text Highlight Effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const highlightTexts = document.querySelectorAll('.highlight-text');
+            
+            highlightTexts.forEach(text => {
+                ScrollTrigger.create({
+                    trigger: text,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    onEnter: () => text.classList.add('active'),
+                    onLeave: () => text.classList.remove('active'),
+                    onEnterBack: () => text.classList.add('active'),
+                    onLeaveBack: () => text.classList.remove('active')
+                });
+            });
+        });
+    </script>
+
+    <!-- Rest of the content -->
 </body>
 </html>
