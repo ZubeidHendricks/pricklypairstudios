@@ -51,7 +51,28 @@
     </style>
 </head>
 <body class="font-body text-gray-800">
-    <!-- Previous content remains the same -->
+    <!-- Navigation -->
+    <nav class="bg-primary text-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold">Prickly Pair Studios</div>
+            <div class="space-x-4">
+                <a href="#about" class="hover:text-secondary">About</a>
+                <a href="#solutions" class="hover:text-secondary">Solutions</a>
+                <a href="#projects" class="hover:text-secondary">Projects</a>
+                <a href="#contact" class="bg-secondary text-primary px-4 py-2 rounded-full hover:bg-gray-200">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-cover bg-center h-[500px] relative" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto relative z-10 text-center text-white flex flex-col justify-center h-full">
+            <h1 class="text-5xl font-bold mb-4">Prickly Pair Studios</h1>
+            <p class="text-xl">Pioneering Innovative AI and Technology Solutions</p>
+            <a href="#contact" class="bg-secondary text-primary px-8 py-3 rounded-full mt-8 inline-block hover:bg-gray-200">Get in Touch</a>
+        </div>
+    </header>
 
     <!-- Solutions Section with Highlighted Text -->
     <section id="solutions" class="py-20 bg-gray-100">
@@ -68,7 +89,24 @@
                     </h3>
                     <p>Cutting-edge <span class="highlight-text">AI platforms</span> for language learning, development automation, and intelligent system design.</p>
                 </div>
-                <!-- Repeat for other solutions -->
+                
+                <!-- Collaborative Solutions -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="text-primary text-4xl mb-4">🤝</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">
+                        <span class="highlight-text">Collaborative Solutions</span>
+                    </h3>
+                    <p>Innovative platforms that redefine <span class="highlight-text">online commerce</span> and digital experiences.</p>
+                </div>
+
+                <!-- Fintech Innovations -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="text-primary text-4xl mb-4">💰</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">
+                        <span class="highlight-text">Fintech Innovations</span>
+                    </h3>
+                    <p>Advanced <span class="highlight-text">cryptocurrency</span> and financial technology solutions.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -92,6 +130,26 @@
         });
     </script>
 
-    <!-- Rest of the content -->
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Let's Innovate Together</h2>
+            <p class="mb-8 text-xl">Got a project in mind? We'd love to hear from you!</p>
+            <a href="mailto:pricklypairstudiosza@gmail.com" class="bg-secondary text-primary px-8 py-3 rounded-full hover:bg-gray-200">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-secondary">Privacy Policy</a>
+                <a href="#" class="hover:text-secondary">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
