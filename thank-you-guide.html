@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - AI Starter Guide Downloaded</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .celebrate {
+            animation: celebrate 0.6s ease-out;
+        }
+        
+        @keyframes celebrate {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Gumroad button styling */
+        .gumroad-button {
+            display: inline-block !important;
+            background: linear-gradient(135deg, #00D4FF, #0099CC) !important;
+            border: none !important;
+            border-radius: 50px !important;
+            padding: 12px 24px !important;
+            font-weight: bold !important;
+            color: #0A0A0A !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+        }
+        
+        .gumroad-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .gumroad-button:visited {
+            color: #0A0A0A !important;
+        }
+    </style>
+    <!-- Gumroad Script -->
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+</head>
+<body class="font-body">
+    <!-- Simple Navigation -->
+    <nav class="glass py-4 shadow-lg">
+        <div class="container mx-auto flex justify-center items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                Prickly Pair Studios
+            </div>
+        </div>
+    </nav>
+
+    <div class="min-h-screen flex items-center justify-center py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Success Message -->
+                <div class="glass p-12 rounded-2xl celebrate">
+                    <div class="text-8xl mb-6">🎉</div>
+                    <h1 class="text-5xl font-bold mb-6 text-accent">Success!</h1>
+                    <p class="text-2xl mb-6 text-gray-300" id="personalMessage">
+                        Your AI Starter Guide is on its way!
+                    </p>
+                    <p class="text-lg mb-8 text-gray-400">
+                        Check your email inbox (and spam folder) for your download link. 
+                        The guide should arrive within the next 5 minutes.
+                    </p>
+
+                    <!-- What's Next -->
+                    <div class="glass p-6 rounded-xl mb-8 text-left">
+                        <h2 class="text-2xl font-bold text-accent mb-4 text-center">What's Next? 🚀</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <div class="flex items-start mb-3">
+                                    <div class="text-accent text-2xl mr-3">📚</div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">Read Your Guide</h3>
+                                        <p class="text-gray-300 text-sm">Start with Chapter 1 - it only takes 10 minutes</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start mb-3">
+                                    <div class="text-accent text-2xl mr-3">🛠️</div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">Try the Tools</h3>
+                                        <p class="text-gray-300 text-sm">Implement the 3 quick wins from Chapter 3</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-start mb-3">
+                                    <div class="text-accent text-2xl mr-3">👥</div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">Join Our Community</h3>
+                                        <p class="text-gray-300 text-sm">Connect with 5,000+ AI enthusiasts</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start mb-3">
+                                    <div class="text-accent text-2xl mr-3">📞</div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">Book a Call</h3>
+                                        <p class="text-gray-300 text-sm">Get personalized AI strategy (free)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                        <a href="https://discord.gg/pricklypairstudios" target="_blank" 
+                           class="bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition glow">
+                            🎮 Join Discord Community
+                        </a>
+                        <a href="free-consultation.html" 
+                           class="bg-accent text-primary px-8 py-3 rounded-full font-bold hover:bg-accent-warm transition glow">
+                            📅 Book Free Strategy Call
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Special Offers -->
+                <div class="space-y-8 mt-12">
+                    <!-- Featured Product Upsell -->
+                    <div class="glass p-8 rounded-xl border-2 border-accent glow">
+                        <div class="text-center mb-6">
+                            <div class="text-4xl mb-4">🎯</div>
+                            <h3 class="text-2xl font-bold text-accent mb-2">Since you love free resources...</h3>
+                            <p class="text-lg text-gray-300">Get 500+ Professional AI Prompts for just R299!</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div>
+                                <ul class="text-gray-300 space-y-2 mb-4">
+                                    <li>• 500+ curated business prompts</li>
+                                    <li>• Marketing & sales templates</li>
+                                    <li>• Content creation shortcuts</li>
+                                    <li>• Customer service scripts</li>
+                                    <li>• Bonus: 50 ChatGPT power tips</li>
+                                </ul>
+                                <div class="text-accent font-semibold">⭐ 4.9/5 rating from 800+ customers</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-gray-400 line-through mb-2">Usually R499</div>
+                                <div class="text-3xl font-bold text-accent mb-4">R299</div>
+                                <a class="gumroad-button block" href="https://gumroad.com/l/ai-prompts-pack?wanted=true" target="_blank">
+                                    🛒 Get Prompts Pack Now
+                                </a>
+                                <p class="text-gray-400 text-sm mt-2">Instant download • 30-day guarantee</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Assessment Offer -->
+                        <div class="glass p-8 rounded-xl border-2 border-accent/30">
+                            <div class="text-4xl mb-4">📊</div>
+                            <h3 class="text-2xl font-bold text-accent mb-4">Free AI Readiness Assessment</h3>
+                            <p class="text-gray-300 mb-6">
+                                Get a personalized score and roadmap for your business. 
+                                Takes just 3 minutes and provides immediate insights.
+                            </p>
+                            <a href="ai-readiness-assessment.html" 
+                               class="bg-accent text-primary px-6 py-3 rounded-full font-bold hover:bg-accent-warm transition">
+                                Take Assessment
+                            </a>
+                        </div>
+
+                        <!-- All Products -->
+                        <div class="glass p-8 rounded-xl border-2 border-accent-warm/30">
+                            <div class="text-4xl mb-4">📚</div>
+                            <h3 class="text-2xl font-bold text-accent-warm mb-4">Complete Digital Library</h3>
+                            <p class="text-gray-300 mb-6">
+                                Browse our full collection of AI guides, templates, and resources. 
+                                From beginner to enterprise level.
+                            </p>
+                            <a href="digital-products.html" 
+                               class="bg-accent-warm text-white px-6 py-3 rounded-full font-bold hover:opacity-90 transition">
+                                Browse All Products
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bonus Section -->
+                <div class="glass p-8 rounded-xl mt-12">
+                    <h2 class="text-3xl font-bold text-accent mb-6">🎁 Your Bonus Resources</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl mb-3">💬</div>
+                            <h3 class="font-bold text-white mb-2">50+ AI Prompts</h3>
+                            <p class="text-gray-300 text-sm">Ready-to-use prompts for business (Worth R1,500)</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl mb-3">🔧</div>
+                            <h3 class="font-bold text-white mb-2">AI Tools Checklist</h3>
+                            <p class="text-gray-300 text-sm">25 essential AI tools with setup guides (Worth R800)</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl mb-3">📈</div>
+                            <h3 class="font-bold text-white mb-2">ROI Calculator</h3>
+                            <p class="text-gray-300 text-sm">Calculate AI impact on your business (Worth R200)</p>
+                        </div>
+                    </div>
+                    <p class="text-accent font-semibold mt-6">Total Bonus Value: R2,500 - Yours FREE!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Having trouble? Email us at zubeid.hendricks@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Personalize message if name is provided
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstName = urlParams.get('firstName');
+        if (firstName) {
+            document.getElementById('personalMessage').textContent = 
+                `Thanks ${firstName}! Your AI Starter Guide is on its way!`;
+        }
+
+        // Simulate download trigger (in real implementation, this would be handled server-side)
+        setTimeout(() => {
+            // Create a fake download link for demonstration
+            const downloadContent = `AI STARTER GUIDE - PRICKLY PAIR STUDIOS
+
+Thank you for downloading our comprehensive AI Starter Guide!
+
+This 50-page guide includes:
+- AI Fundamentals for Business
+- 25+ Practical AI Tools
+- Step-by-step Implementation
+- Real Business Case Studies
+- Bonus: AI Prompt Templates (Worth R2,500)
+
+For the full interactive guide with videos and templates, 
+please contact us at zubeid.hendricks@gmail.com
+
+Get Started:
+1. Join our Discord community: https://discord.gg/pricklypairstudios
+2. Book a free consultation: pricklypairstudios.com/free-consultation
+3. Take our AI readiness assessment: pricklypairstudios.com/ai-readiness-assessment
+
+Welcome to your AI journey!
+
+- Zubeid Hendricks
+Founder, Prickly Pair Studios
+Cape Town, South Africa`;
+
+            const blob = new Blob([downloadContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'AI_Starter_Guide_Prickly_Pair_Studios.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }, 3000); // Trigger download after 3 seconds
+    </script>
+</body>
+</html>

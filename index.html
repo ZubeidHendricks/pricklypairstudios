@@ -16,11 +16,12 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#1A5F7A',     // Deep blue-green
-                        'secondary': '#59C1BD',   // Soft teal
-                        'accent': '#F47C7C',      // Warm coral
-                        'bg-neutral': '#F5F5F5', // Light gray
-                        'text-dark': '#333333'   // Dark gray
+                        'primary': '#0A0A0A',     // Deep black
+                        'secondary': '#1A1A1A',   // Dark gray
+                        'accent': '#00D4FF',      // Cyber blue
+                        'accent-warm': '#FF6B35', // Orange accent
+                        'bg-neutral': '#111111',  // Very dark gray
+                        'text-light': '#E5E5E5'  // Light gray text
                     },
                     fontFamily: {
                         'body': ['Poppins', 'sans-serif']
@@ -45,93 +46,273 @@
             bottom: 0;
             width: 100%;
             height: 50%;
-            background-color: rgba(249, 124, 124, 0.3); /* Soft coral highlight */
+            background-color: rgba(0, 212, 255, 0.3); /* Cyber blue highlight */
             z-index: -1;
             transform: scaleX(1);
             transform-origin: left;
         }
 
         body {
-            background-color: #F5F5F5;
-            color: #333333;
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
     </style>
 </head>
 <body class="font-body">
     <!-- Navigation Section -->
-    <nav class="bg-primary text-white py-4 shadow-md">
+    <nav class="glass py-4 shadow-lg fixed w-full z-50">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <div class="text-2xl font-bold">Prickly Pair Studios</div>
-            <div class="space-x-4">
-                <a href="#about" class="hover:text-secondary">About</a>
-                <a href="#solutions" class="hover:text-secondary">Solutions</a>
-                <a href="#projects" class="hover:text-secondary">Projects</a>
-                <a href="#contact" class="bg-secondary text-primary px-4 py-2 rounded-full hover:bg-accent/20">Contact</a>
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                Prickly Pair Studios
+            </div>
+            <div class="space-x-6">
+                <a href="#about" class="hover:text-accent transition">About</a>
+                <a href="services.html" class="hover:text-accent transition">Services</a>
+                <a href="#solutions" class="hover:text-accent transition">AI MAS</a>
+                <a href="#projects" class="hover:text-accent transition">Projects</a>
+                <a href="training.html" class="hover:text-accent transition">Training</a>
+                <a href="community.html" class="hover:text-accent transition">Community</a>
+                <a href="#contact" class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition glow">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-primary text-white py-20">
+    <header class="min-h-screen flex items-center justify-center pt-20">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-5xl font-bold mb-4">Prickly Pair Studios</h1>
-            <p class="text-xl mb-8">Pioneering <span class="hx">Innovative</span> AI and Technology Solutions</p>
-            <a href="#contact" class="bg-accent text-white px-8 py-3 rounded-full hover:bg-accent/80 transition">Get in Touch</a>
+            <div class="glass p-12 rounded-2xl max-w-4xl mx-auto">
+                <h1 class="text-6xl font-bold mb-6 text-accent">Prickly Pair Studios</h1>
+                <p class="text-2xl mb-4 text-text-light">AI Multi-Agent Systems (MAS) Specialists</p>
+                <p class="text-lg mb-4 text-gray-300">We do <span class="hx text-accent font-bold">EVERYTHING</span> in AI - from advanced Multi-Agent Systems to custom AI training solutions</p>
+                <p class="text-base mb-8 text-gray-400">Leading dynamic teams in creating AI-driven applications, games, and enterprise solutions for SMEs and startups worldwide</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="services.html" class="bg-accent text-primary px-8 py-3 rounded-full hover:bg-accent-warm transition glow font-semibold">Our Services</a>
+                    <a href="training.html" class="bg-accent-warm text-primary px-8 py-3 rounded-full hover:bg-accent transition glow font-semibold">AI Training</a>
+                    <a href="community.html" class="border-2 border-accent text-accent px-8 py-3 rounded-full hover:bg-accent hover:text-primary transition">Join Community</a>
+                </div>
+            </div>
         </div>
     </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="glass p-8 rounded-2xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent">
+                    <span class="hx">About Zubeid Hendricks</span>
+                </h2>
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="text-lg mb-6 text-gray-300">Founder of Prickly Pair Studios, based in Cape Town, South Africa. Specializing in AI Agents, MCPs (Master Control Programs), and AI Workflow Automation.</p>
+                    <p class="text-lg text-gray-300">With 207 repositories on GitHub and expertise in TypeScript, Python, and Web3 technologies, I lead dynamic teams in creating innovative solutions that blend cutting-edge AI with practical business applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Solutions Section -->
     <section id="solutions" class="py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-primary">
-                <span class="hx">Our Core Solutions</span>
+            <h2 class="text-4xl font-bold text-center mb-8 text-accent">
+                <span class="hx">AI Multi-Agent Systems (MAS) Expertise</span>
             </h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- AI & Machine Learning -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-t-4 border-primary">
-                    <div class="text-primary text-4xl mb-4">🤖</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-primary">
-                        <span class="hx">AI & Machine Learning</span>
+            <p class="text-center text-gray-300 mb-12 max-w-3xl mx-auto">We specialize in everything AI - from building sophisticated Multi-Agent Systems to training custom models. Partner with industry leaders.</p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- AI MAS Development -->
+                <div class="glass p-6 rounded-xl hover:glow transition border border-accent/20">
+                    <div class="text-accent text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-semibold mb-4 text-accent">
+                        <span class="hx">AI Multi-Agent Systems</span>
                     </h3>
-                    <p>Cutting-edge <span class="hx">AI platforms</span> for language learning, development automation, and intelligent system design.</p>
+                    <p class="text-gray-300">Advanced MAS platforms, CrewAI orchestration, and intelligent autonomous agent networks.</p>
                 </div>
 
-                <!-- Collaborative Solutions -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-t-4 border-secondary">
-                    <div class="text-secondary text-4xl mb-4">🤝</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-secondary">
-                        <span class="hx">Collaborative Solutions</span>
+                <!-- AI Training & Consulting -->
+                <div class="glass p-6 rounded-xl hover:glow transition border border-accent/20">
+                    <div class="text-accent text-4xl mb-4">🎓</div>
+                    <h3 class="text-xl font-semibold mb-4 text-accent">
+                        <span class="hx">AI Training & Consulting</span>
                     </h3>
-                    <p>Innovative platforms that redefine <span class="hx">online commerce</span> and digital experiences.</p>
+                    <p class="text-gray-300">Custom AI model training, enterprise AI strategy, and comprehensive AI education programs.</p>
                 </div>
 
-                <!-- Fintech Innovations -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-t-4 border-accent">
-                    <div class="text-accent text-4xl mb-4">💰</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-accent">
-                        <span class="hx">Fintech Innovations</span>
+                <!-- Everything AI -->
+                <div class="glass p-6 rounded-xl hover:glow transition border border-accent/20">
+                    <div class="text-accent text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold mb-4 text-accent">
+                        <span class="hx">Everything AI</span>
                     </h3>
-                    <p>Advanced <span class="hx">cryptocurrency</span> and financial technology solutions.</p>
+                    <p class="text-gray-300">From chatbots to complex AI workflows - we build, deploy, and scale any AI solution you need.</p>
+                </div>
+
+                <!-- Enterprise AI -->
+                <div class="glass p-6 rounded-xl hover:glow transition border border-accent/20">
+                    <div class="text-accent text-4xl mb-4">🏢</div>
+                    <h3 class="text-xl font-semibold mb-4 text-accent">
+                        <span class="hx">Enterprise AI Solutions</span>
+                    </h3>
+                    <p class="text-gray-300">Large-scale AI implementations, fintech innovation, and enterprise-grade AI infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Partners Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-accent">
+                <span class="hx">Powered by Industry Leaders</span>
+            </h2>
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-70">
+                <div class="glass p-4 rounded-lg hover:opacity-100 transition">
+                    <div class="text-2xl font-bold text-accent">OpenAI</div>
+                </div>
+                <div class="glass p-4 rounded-lg hover:opacity-100 transition">
+                    <div class="text-2xl font-bold text-accent">Anthropic</div>
+                </div>
+                <div class="glass p-4 rounded-lg hover:opacity-100 transition">
+                    <div class="text-2xl font-bold text-accent">CrewAI</div>
+                </div>
+                <div class="glass p-4 rounded-lg hover:opacity-100 transition">
+                    <div class="text-2xl font-bold text-accent">LangChain</div>
+                </div>
+                <div class="glass p-4 rounded-lg hover:opacity-100 transition">
+                    <div class="text-2xl font-bold text-accent">Pinecone</div>
+                </div>
+                <div class="glass p-4 rounded-lg hover:opacity-100 transition">
+                    <div class="text-2xl font-bold text-accent">Hugging Face</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notable Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">
+                <span class="hx">Notable Projects</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- ZOOBAYD Platform -->
+                <div class="glass p-6 rounded-xl hover:glow transition">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">ZOOBAYD Web3 AI Platform</h3>
+                    <p class="text-gray-300 mb-4">A platform that seamlessly integrates Web3 technologies with AI development, showcasing proficiency in TypeScript and modern web technologies.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">TypeScript</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Web3</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">AI</span>
+                    </div>
+                </div>
+
+                <!-- Project Orchestrator -->
+                <div class="glass p-6 rounded-xl hover:glow transition">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Project Orchestrator</h3>
+                    <p class="text-gray-300 mb-4">Automated project management and orchestration system powered by CrewAI, demonstrating skills in Python and automation.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Python</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">CrewAI</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Automation</span>
+                    </div>
+                </div>
+
+                <!-- Islamic POS System -->
+                <div class="glass p-6 rounded-xl hover:glow transition">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Islamic POS System</h3>
+                    <p class="text-gray-300 mb-4">Modern Blazor-based Point of Sale system incorporating Islamic finance features, including Zakaah calculation and profit sharing.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Blazor</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">FinTech</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Islamic Finance</span>
+                    </div>
+                </div>
+
+                <!-- LinguaLearn System 2.0 -->
+                <div class="glass p-6 rounded-xl hover:glow transition">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">LinguaLearn System 2.0</h3>
+                    <p class="text-gray-300 mb-4">Enhanced desktop application for capturing and preserving indigenous language terms using AI-powered object recognition.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">AI</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Cultural Preservation</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Desktop App</span>
+                    </div>
+                </div>
+
+                <!-- Crypto Arbitrage Engine -->
+                <div class="glass p-6 rounded-xl hover:glow transition">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Crypto Arbitrage Engine</h3>
+                    <p class="text-gray-300 mb-4">Multi-exchange cryptocurrency arbitrage platform with automated trading and profit optimization algorithms.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Python</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Cryptocurrency</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Trading</span>
+                    </div>
+                </div>
+
+                <!-- YoBuddy -->
+                <div class="glass p-6 rounded-xl hover:glow transition">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">YoBuddy</h3>
+                    <p class="text-gray-300 mb-4">Chrome extension for synchronized browsing and shopping with friends, highlighting innovation in collaborative online experiences.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Chrome Extension</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Social</span>
+                        <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">E-commerce</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-primary text-white">
+    <section id="contact" class="py-20">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-4">Let's <span class="hx">Innovate</span> Together</h2>
-            <p class="mb-8 text-xl">Got a project in mind? We'd love to hear from you!</p>
-            <a href="mailto:pricklypairstudiosza@gmail.com" class="bg-accent text-white px-8 py-3 rounded-full hover:bg-accent/80 transition">
-                Get in Touch
-            </a>
+            <div class="glass p-12 rounded-2xl max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold mb-4 text-accent">Let's <span class="hx">Innovate</span> Together</h2>
+                <p class="mb-6 text-xl text-gray-300">Ready to transform your ideas into cutting-edge AI solutions?</p>
+                <div class="mb-6 space-y-2 text-gray-300">
+                    <p><span class="text-accent font-semibold">📧 Email:</span> zubeid.hendricks@gmail.com</p>
+                    <p><span class="text-accent font-semibold">📱 Phone:</span> 0632205343</p>
+                    <p><span class="text-accent font-semibold">📍 Location:</span> Cape Town, South Africa</p>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/zubeid-hendricks/ai-strategy-consultation'});return false;" class="bg-accent text-primary px-8 py-3 rounded-full hover:bg-accent-warm transition glow font-semibold">
+                        📅 Book Free Consultation
+                    </a>
+                    <a href="https://discord.gg/pricklypairstudios" target="_blank" class="bg-purple-600 text-white px-8 py-3 rounded-full hover:bg-purple-700 transition glow font-semibold">
+                        Join Discord
+                    </a>
+                    <a href="mailto:zubeid.hendricks@gmail.com" class="border-2 border-accent text-accent px-8 py-3 rounded-full hover:bg-accent hover:text-primary transition">
+                        📧 Email Us
+                    </a>
+                </div>
+                <div class="flex justify-center space-x-6 text-gray-400">
+                    <a href="https://youtube.com/@codewithzubeid" target="_blank" class="hover:text-accent transition">YouTube</a>
+                    <a href="https://linkedin.com/in/zubeid-hendricks" target="_blank" class="hover:text-accent transition">LinkedIn</a>
+                    <a href="https://discord.gg/pricklypairstudios" target="_blank" class="hover:text-purple-400 transition">Discord</a>
+                    <a href="community.html" class="hover:text-accent transition">Community</a>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Calendly Widget Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+    <script src="calendly-widget.js"></script>
+
     <!-- Footer -->
-    <footer class="bg-primary text-white py-8">
+    <footer class="glass py-8 border-t border-accent/20">
         <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-gray-400">&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | AI Agent Developer & Technology Innovator</p>
         </div>
     </footer>
 

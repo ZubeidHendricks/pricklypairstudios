@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Consultation - Prickly Pair Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .pulse-border {
+            animation: pulse-border 2s infinite;
+        }
+        
+        @keyframes pulse-border {
+            0% { border-color: rgba(0, 212, 255, 0.5); }
+            50% { border-color: rgba(0, 212, 255, 1); }
+            100% { border-color: rgba(0, 212, 255, 0.5); }
+        }
+        
+        .time-slot {
+            transition: all 0.3s ease;
+        }
+        
+        .time-slot:hover {
+            background-color: rgba(0, 212, 255, 0.1);
+            border-color: #00D4FF;
+        }
+        
+        .time-slot.selected {
+            background-color: rgba(0, 212, 255, 0.2);
+            border-color: #00D4FF;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+        
+        /* Calendly customization */
+        .calendly-inline-widget {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        /* Dark theme for Calendly */
+        .calendly-container {
+            background: rgba(26, 26, 26, 0.5);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Simple Navigation -->
+    <nav class="glass py-4 shadow-lg">
+        <div class="container mx-auto flex justify-center items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                Prickly Pair Studios
+            </div>
+        </div>
+    </nav>
+
+    <div class="min-h-screen py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <!-- Left Side - Value Proposition -->
+                    <div>
+                        <h1 class="text-5xl font-bold mb-6 text-accent leading-tight">
+                            Free AI Strategy Consultation
+                        </h1>
+                        <p class="text-2xl mb-6 text-gray-300">
+                            Get a personalized 45-minute session with Zubeid Hendricks
+                        </p>
+                        <p class="text-lg mb-8 text-gray-400">
+                            Discover exactly how AI can transform your business with a custom roadmap and implementation strategy.
+                        </p>
+                        
+                        <!-- What You'll Get -->
+                        <div class="glass p-6 rounded-xl mb-8">
+                            <h3 class="text-2xl font-bold mb-4 text-accent">In this session, you'll get:</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="text-accent mr-3 mt-1">🎯</div>
+                                    <div>
+                                        <div class="font-semibold text-white">Custom AI Assessment</div>
+                                        <div class="text-gray-300">Detailed analysis of your business's AI readiness and opportunities</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-accent mr-3 mt-1">🗺️</div>
+                                    <div>
+                                        <div class="font-semibold text-white">Personalized Roadmap</div>
+                                        <div class="text-gray-300">Step-by-step plan tailored to your industry and goals</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-accent mr-3 mt-1">💡</div>
+                                    <div>
+                                        <div class="font-semibold text-white">Immediate Action Items</div>
+                                        <div class="text-gray-300">3-5 specific things you can implement right away</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-accent mr-3 mt-1">📊</div>
+                                    <div>
+                                        <div class="font-semibold text-white">ROI Projections</div>
+                                        <div class="text-gray-300">Realistic estimates of AI impact on your business</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-accent mr-3 mt-1">🎁</div>
+                                    <div>
+                                        <div class="font-semibold text-white">Bonus Resources</div>
+                                        <div class="text-gray-300">R5,000 worth of AI tools and templates</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Proof -->
+                        <div class="space-y-4 mb-8">
+                            <div class="glass p-4 rounded-lg">
+                                <p class="text-gray-300 italic mb-2">
+                                    "In just 45 minutes, Zubeid showed me how to save 15 hours per week with AI automation. The ROI was immediate."
+                                </p>
+                                <p class="text-accent font-semibold">- Michael R., CEO, TechStart Solutions</p>
+                            </div>
+                            <div class="glass p-4 rounded-lg">
+                                <p class="text-gray-300 italic mb-2">
+                                    "The consultation was worth more than courses I've paid thousands for. Practical, actionable, and results-driven."
+                                </p>
+                                <p class="text-accent font-semibold">- Lisa K., Operations Director</p>
+                            </div>
+                        </div>
+
+                        <!-- Guarantee -->
+                        <div class="glass p-6 rounded-xl border-2 border-accent/30">
+                            <div class="flex items-center mb-4">
+                                <div class="text-accent text-3xl mr-3">🛡️</div>
+                                <h3 class="text-xl font-bold text-accent">100% Value Guarantee</h3>
+                            </div>
+                            <p class="text-gray-300">
+                                If you don't get at least 3 actionable insights that could save you 5+ hours per week, 
+                                we'll extend the session until you do - completely free.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Calendly Booking -->
+                    <div>
+                        <div class="glass p-8 rounded-2xl border-2 pulse-border">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-4">📅</div>
+                                <h2 class="text-3xl font-bold text-accent mb-2">Book Your Session</h2>
+                                <p class="text-gray-300">Usually R2,500 - FREE for limited time</p>
+                                <div class="inline-flex items-center bg-accent-warm/20 border border-accent-warm rounded-full px-4 py-2 mt-2">
+                                    <span class="text-accent-warm font-semibold">🔥 Only 5 spots left this month</span>
+                                </div>
+                            </div>
+
+                            <!-- Calendly Integration -->
+                            <div class="calendly-container">
+                                <!-- Calendly inline widget begin -->
+                                <div class="calendly-inline-widget" 
+                                     data-url="https://calendly.com/zubeid-hendricks/ai-strategy-consultation" 
+                                     style="min-width:320px;height:700px;"></div>
+                                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                                <!-- Calendly inline widget end -->
+                                
+                                <!-- Fallback for when Calendly doesn't load -->
+                                <div id="calendlyFallback" class="hidden text-center">
+                                    <p class="text-gray-300 mb-4">Having trouble with the calendar? No problem!</p>
+                                    <div class="space-y-4">
+                                        <a href="mailto:zubeid.hendricks@gmail.com?subject=AI Strategy Consultation Request&body=Hi Zubeid,%0D%0A%0D%0AI'd like to book a free AI strategy consultation.%0D%0A%0D%0AMy preferred times are:%0D%0A%0D%0AMy biggest AI challenge is:%0D%0A%0D%0ACompany:%0D%0APhone:%0D%0A%0D%0AThanks!" 
+                                           class="block bg-accent text-primary px-6 py-3 rounded-full font-bold hover:bg-accent-warm transition">
+                                            📧 Email to Book
+                                        </a>
+                                        <a href="tel:0632205343" 
+                                           class="block border-2 border-accent text-accent px-6 py-3 rounded-full hover:bg-accent hover:text-primary transition">
+                                            📞 Call: 0632205343
+                                        </a>
+                                        <a href="https://wa.me/27632205343?text=Hi%20Zubeid%2C%20I%27d%20like%20to%20book%20a%20free%20AI%20strategy%20consultation" 
+                                           target="_blank"
+                                           class="block bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">
+                                            💬 WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <p class="text-xs text-gray-400">
+                                    🔒 Your information is confidential. Session details will be sent via email.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">How It Works</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl mx-auto mb-4">1</div>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Book Session</h3>
+                        <p class="text-gray-300">Fill out the form and select your preferred time</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl mx-auto mb-4">2</div>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Get Confirmation</h3>
+                        <p class="text-gray-300">We'll confirm your session within 24 hours</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl mx-auto mb-4">3</div>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">45-Min Session</h3>
+                        <p class="text-gray-300">Deep-dive consultation via video call</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl mx-auto mb-4">4</div>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Get Results</h3>
+                        <p class="text-gray-300">Receive your custom AI roadmap and resources</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Zubeid -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass p-8 rounded-2xl">
+                    <div class="grid md:grid-cols-3 gap-8 items-center">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-accent rounded-full flex items-center justify-center text-6xl mx-auto mb-4">
+                                👨‍💻
+                            </div>
+                            <div class="space-y-2">
+                                <div class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">AI Expert</div>
+                                <div class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">207+ Repos</div>
+                                <div class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">5000+ Students</div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <h2 class="text-3xl font-bold mb-4 text-accent">Meet Zubeid Hendricks</h2>
+                            <p class="text-gray-300 mb-4">
+                                Founder of Prickly Pair Studios and AI Multi-Agent Systems specialist based in Cape Town. 
+                                With 207+ repositories on GitHub and experience training over 5,000 professionals, 
+                                Zubeid has helped 100+ businesses successfully implement AI solutions.
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <div class="text-accent mr-3">✅</div>
+                                    <span class="text-gray-300">5+ years in AI development and consulting</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-accent mr-3">✅</div>
+                                    <span class="text-gray-300">Specialist in Multi-Agent Systems and CrewAI</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-accent mr-3">✅</div>
+                                    <span class="text-gray-300">Worked with startups to enterprise companies</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-accent mr-3">✅</div>
+                                    <span class="text-gray-300">Expert in practical AI implementation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Is this really free?</h3>
+                    <p class="text-gray-300">Yes, completely free. No hidden costs or obligations. This is our way of helping businesses understand their AI potential.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">What if I'm not technical?</h3>
+                    <p class="text-gray-300">Perfect! Our consultations are designed for business leaders, not technical experts. We explain everything in simple terms.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Will you try to sell me something?</h3>
+                    <p class="text-gray-300">No pressure sales. We focus on providing value. If our services are a fit, we'll mention them, but there's no obligation.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">How long until I see results?</h3>
+                    <p class="text-gray-300">Many clients implement quick wins within days of our consultation. Larger projects typically show results within 2-4 weeks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6 text-accent">Ready to Transform Your Business?</h2>
+                <p class="text-xl mb-8 text-gray-300">
+                    Don't let your competitors get ahead with AI. Book your free consultation today.
+                </p>
+                <a href="#consultationForm" class="bg-accent text-primary px-8 py-4 rounded-full text-xl font-bold hover:bg-accent-warm transition glow">
+                    📅 Book Your Free Session Now
+                </a>
+                <p class="text-gray-400 mt-4">
+                    ⏰ Limited spots available - Usually booked 2-3 weeks in advance
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | AI Strategy Consulting</p>
+        </div>
+    </footer>
+
+    <script>
+        let selectedTimeSlot = null;
+
+        function selectTimeSlot(button, timeValue) {
+            // Remove selection from all buttons
+            document.querySelectorAll('.time-slot').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Add selection to clicked button
+            button.classList.add('selected');
+            selectedTimeSlot = timeValue;
+            
+            // Update hidden input
+            document.getElementById('preferredTimeInput').value = timeValue;
+        }
+
+        // Form submission handling
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate time slot selection
+            if (!selectedTimeSlot) {
+                alert('Please select a preferred time slot.');
+                return;
+            }
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '⏳ Booking your session...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Store consultation data
+                localStorage.setItem('consultationData', JSON.stringify(data));
+                
+                // Redirect to thank you page
+                window.location.href = 'thank-you-consultation.html?firstName=' + encodeURIComponent(data.firstName);
+            }, 2000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

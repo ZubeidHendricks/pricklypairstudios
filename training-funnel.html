@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Training Funnel - Master AI in 30 Days</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .price-card {
+            transition: all 0.3s ease;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .popular {
+            position: relative;
+            border: 2px solid #00D4FF;
+        }
+        
+        .popular::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00D4FF;
+            color: #0A0A0A;
+            padding: 4px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .countdown {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Simple Navigation -->
+    <nav class="glass py-4 shadow-lg">
+        <div class="container mx-auto flex justify-center items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                Prickly Pair Studios
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass p-12 rounded-2xl">
+                    <div class="text-6xl mb-6">🚀</div>
+                    <h1 class="text-6xl font-bold mb-6 text-accent leading-tight">
+                        Master AI in 30 Days
+                    </h1>
+                    <p class="text-2xl mb-6 text-gray-300">
+                        From Zero to AI Expert with Our Complete Training System
+                    </p>
+                    <p class="text-lg mb-8 text-gray-400 max-w-3xl mx-auto">
+                        Join 2,500+ professionals who transformed their careers with our proven AI training methodology. 
+                        Get hands-on experience with Multi-Agent Systems, custom model training, and enterprise AI implementation.
+                    </p>
+                    
+                    <!-- Urgency Element -->
+                    <div class="inline-flex items-center bg-accent-warm/20 border border-accent-warm rounded-full px-6 py-3 mb-8 countdown">
+                        <span class="text-accent-warm font-bold">🔥 Early Bird Special: 50% OFF ends in </span>
+                        <span class="text-accent-warm font-bold ml-2" id="countdown">72:00:00</span>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#pricing" class="bg-accent text-primary px-8 py-4 rounded-full text-xl font-bold hover:bg-accent-warm transition glow">
+                            🎓 Enroll Now - 50% OFF
+                        </a>
+                        <a href="#curriculum" class="border-2 border-accent text-accent px-8 py-4 rounded-full text-xl hover:bg-accent hover:text-primary transition">
+                            📋 View Curriculum
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-16 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-accent">What Our Students Say</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-xl">👨‍💼</div>
+                        <div class="ml-4">
+                            <h3 class="font-bold text-white">David Thompson</h3>
+                            <p class="text-gray-400 text-sm">CEO, TechStart Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "This training saved my company R500,000 in the first 6 months. The ROI was immediate and the skills I learned transformed our entire operation."
+                    </p>
+                    <div class="flex text-accent mt-4">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-xl">👩‍💻</div>
+                        <div class="ml-4">
+                            <h3 class="font-bold text-white">Sarah Mitchell</h3>
+                            <p class="text-gray-400 text-sm">AI Developer, FinTech Co</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "From marketing manager to AI specialist in 30 days. I got a 40% salary increase and now lead our AI initiatives. Best investment I ever made."
+                    </p>
+                    <div class="flex text-accent mt-4">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-xl">👨‍🔬</div>
+                        <div class="ml-4">
+                            <h3 class="font-bold text-white">Michael Chen</h3>
+                            <p class="text-gray-400 text-sm">Freelance Consultant</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "I went from R15,000/month to R85,000/month as an AI consultant. The practical approach and real projects made all the difference."
+                    </p>
+                    <div class="flex text-accent mt-4">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section id="curriculum" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Complete 30-Day Curriculum</h2>
+            <div class="max-w-6xl mx-auto">
+                <!-- Week 1 -->
+                <div class="glass p-8 rounded-xl mb-8">
+                    <h3 class="text-3xl font-bold text-accent mb-6">Week 1: AI Foundations & Tools</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-4">Days 1-3: AI Fundamentals</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>• Understanding AI, ML, and Deep Learning</li>
+                                <li>• Current AI landscape and opportunities</li>
+                                <li>• Hands-on with ChatGPT, Claude, and GPT-4</li>
+                                <li>• Prompt engineering mastery</li>
+                                <li>• Building your first AI workflow</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-4">Days 4-7: Essential Tools</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>• Python for AI (beginner-friendly)</li>
+                                <li>• APIs and integrations</li>
+                                <li>• Vector databases and embeddings</li>
+                                <li>• No-code AI solutions</li>
+                                <li>• Project: Build your first AI assistant</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="glass p-8 rounded-xl mb-8">
+                    <h3 class="text-3xl font-bold text-accent mb-6">Week 2: Advanced AI Development</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-4">Days 8-10: RAG Systems</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>• Retrieval-Augmented Generation</li>
+                                <li>• Document processing and chunking</li>
+                                <li>• Semantic search implementation</li>
+                                <li>• Building knowledge bases</li>
+                                <li>• Project: Company knowledge assistant</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-4">Days 11-14: Agent Development</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>• LangChain framework mastery</li>
+                                <li>• Agent architectures and patterns</li>
+                                <li>• Tool integration and function calling</li>
+                                <li>• Memory and context management</li>
+                                <li>• Project: Autonomous research agent</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="glass p-8 rounded-xl mb-8">
+                    <h3 class="text-3xl font-bold text-accent mb-6">Week 3: Multi-Agent Systems</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-4">Days 15-17: CrewAI Mastery</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>• CrewAI framework deep-dive</li>
+                                <li>• Agent collaboration patterns</li>
+                                <li>• Workflow orchestration</li>
+                                <li>• Task delegation strategies</li>
+                                <li>• Project: Content creation crew</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-4">Days 18-21: Enterprise MAS</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>• Scaling multi-agent systems</li>
+                                <li>• Performance optimization</li>
+                                <li>• Error handling and reliability</li>
+                                <li>• Monitoring and analytics</li>
+                                <li>• Project: Business automation system</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="glass p-8 rounded-xl mb-8">
+                    <h3 class="text-3xl font-bold text-accent mb-6">Week 4: Deployment & Business</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-4">Days 22-24: Production Deployment</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>• Cloud deployment strategies</li>
+                                <li>• Docker and containerization</li>
+                                <li>• API development and security</li>
+                                <li>• Monitoring and maintenance</li>
+                                <li>• Project: Deploy your AI system</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-4">Days 25-30: Business Applications</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>• AI consulting and pricing</li>
+                                <li>• Client acquisition strategies</li>
+                                <li>• Building AI products</li>
+                                <li>• Legal and ethical considerations</li>
+                                <li>• Final Project: Complete AI solution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Choose Your Training Path</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Basic -->
+                <div class="glass p-8 rounded-xl price-card">
+                    <h3 class="text-2xl font-bold text-white mb-4">AI Foundations</h3>
+                    <div class="text-4xl font-bold text-accent mb-4">
+                        <span class="line-through text-gray-500 text-2xl">R15,000</span>
+                        <div>R7,500</div>
+                    </div>
+                    <p class="text-gray-300 mb-6">Perfect for beginners</p>
+                    <ul class="text-gray-300 space-y-3 mb-8">
+                        <li>• Week 1 & 2 content</li>
+                        <li>• 20+ video lessons</li>
+                        <li>• 5 hands-on projects</li>
+                        <li>• Community access</li>
+                        <li>• Email support</li>
+                        <li>• Certificate of completion</li>
+                    </ul>
+                    <button onclick="enrollInCourse('basic')" class="w-full bg-accent text-primary py-3 rounded-full font-bold hover:bg-accent-warm transition">
+                        Enroll Now - 50% OFF
+                    </button>
+                </div>
+
+                <!-- Professional (Popular) -->
+                <div class="glass p-8 rounded-xl price-card popular">
+                    <h3 class="text-2xl font-bold text-white mb-4">AI Professional</h3>
+                    <div class="text-4xl font-bold text-accent mb-4">
+                        <span class="line-through text-gray-500 text-2xl">R35,000</span>
+                        <div>R17,500</div>
+                    </div>
+                    <p class="text-gray-300 mb-6">Most comprehensive program</p>
+                    <ul class="text-gray-300 space-y-3 mb-8">
+                        <li>• Complete 30-day curriculum</li>
+                        <li>• 50+ video lessons</li>
+                        <li>• 12 real-world projects</li>
+                        <li>• 1-on-1 mentorship calls</li>
+                        <li>• Priority support</li>
+                        <li>• Job placement assistance</li>
+                        <li>• Lifetime community access</li>
+                        <li>• Professional certificate</li>
+                    </ul>
+                    <button onclick="enrollInCourse('professional')" class="w-full bg-accent text-primary py-3 rounded-full font-bold hover:bg-accent-warm transition glow">
+                        Enroll Now - 50% OFF
+                    </button>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="glass p-8 rounded-xl price-card">
+                    <h3 class="text-2xl font-bold text-white mb-4">Enterprise Team</h3>
+                    <div class="text-4xl font-bold text-accent mb-4">
+                        <span class="line-through text-gray-500 text-2xl">R100,000</span>
+                        <div>R50,000</div>
+                    </div>
+                    <p class="text-gray-300 mb-6">For teams of 5-20 people</p>
+                    <ul class="text-gray-300 space-y-3 mb-8">
+                        <li>• Everything in Professional</li>
+                        <li>• Custom curriculum</li>
+                        <li>• Team workshops</li>
+                        <li>• Implementation consulting</li>
+                        <li>• Dedicated success manager</li>
+                        <li>• Custom projects</li>
+                        <li>• 6 months support</li>
+                    </ul>
+                    <button onclick="bookConsultation()" class="w-full bg-accent text-primary py-3 rounded-full font-bold hover:bg-accent-warm transition">
+                        Book Consultation
+                    </button>
+                </div>
+            </div>
+
+            <!-- Guarantee -->
+            <div class="glass p-8 rounded-xl mt-12 max-w-3xl mx-auto text-center">
+                <div class="text-4xl mb-4">🛡️</div>
+                <h3 class="text-2xl font-bold text-accent mb-4">100% Success Guarantee</h3>
+                <p class="text-gray-300 mb-4">
+                    If you don't see a significant improvement in your AI skills within 30 days, 
+                    or if you're not completely satisfied with the training, we'll refund your money completely.
+                </p>
+                <p class="text-accent font-semibold">No questions asked. No risk to you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Exclusive Bonuses (Worth R15,000)</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="text-xl font-bold text-accent mb-3">AI Toolkit Library</h3>
+                    <p class="text-gray-300 mb-3">500+ AI tools, prompts, and templates</p>
+                    <p class="text-accent font-semibold">Worth R5,000</p>
+                </div>
+
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h3 class="text-xl font-bold text-accent mb-3">Business Templates</h3>
+                    <p class="text-gray-300 mb-3">Contracts, proposals, and pricing guides</p>
+                    <p class="text-accent font-semibold">Worth R3,000</p>
+                </div>
+
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-xl font-bold text-accent mb-3">AI Startup Kit</h3>
+                    <p class="text-gray-300 mb-3">Everything to launch your AI business</p>
+                    <p class="text-accent font-semibold">Worth R7,000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor -->
+    <section class="py-20 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass p-8 rounded-2xl">
+                    <div class="grid md:grid-cols-3 gap-8 items-center">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-accent rounded-full flex items-center justify-center text-6xl mx-auto mb-4">
+                                👨‍💻
+                            </div>
+                            <div class="space-y-2">
+                                <div class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">5+ Years AI</div>
+                                <div class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">207+ Projects</div>
+                                <div class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">2500+ Students</div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <h2 class="text-3xl font-bold mb-4 text-accent">Meet Your Instructor</h2>
+                            <h3 class="text-2xl font-semibold mb-4 text-white">Zubeid Hendricks</h3>
+                            <p class="text-gray-300 mb-4">
+                                Founder of Prickly Pair Studios and AI Multi-Agent Systems specialist. 
+                                With 207+ repositories on GitHub and experience training over 2,500 professionals, 
+                                Zubeid has helped 100+ businesses successfully implement AI solutions.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="text-accent font-semibold">Experience</div>
+                                    <div class="text-gray-300">5+ years AI development</div>
+                                </div>
+                                <div>
+                                    <div class="text-accent font-semibold">Students</div>
+                                    <div class="text-gray-300">2,500+ trained</div>
+                                </div>
+                                <div>
+                                    <div class="text-accent font-semibold">Success Rate</div>
+                                    <div class="text-gray-300">95% completion</div>
+                                </div>
+                                <div>
+                                    <div class="text-accent font-semibold">Location</div>
+                                    <div class="text-gray-300">Cape Town, SA</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Do I need programming experience?</h3>
+                    <p class="text-gray-300">No! We start from the basics and build up. About 60% of our students have no coding background.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">How much time do I need per day?</h3>
+                    <p class="text-gray-300">2-3 hours per day for 30 days. Content is bite-sized and practical, designed for busy professionals.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">What if I fall behind?</h3>
+                    <p class="text-gray-300">Lifetime access means you can learn at your own pace. Plus, we have weekly catch-up sessions.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Will this help me get a job?</h3>
+                    <p class="text-gray-300">Yes! We include job placement assistance and many students get hired before completing the course.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-secondary/30">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6 text-accent">Ready to Transform Your Career?</h2>
+                <p class="text-xl mb-6 text-gray-300">
+                    Join the AI revolution and secure your future in the fastest-growing industry.
+                </p>
+                <div class="glass p-6 rounded-xl mb-8">
+                    <div class="text-accent-warm font-bold text-lg mb-2">⏰ Early Bird Special Ends Soon!</div>
+                    <div class="text-3xl font-bold text-accent countdown" id="countdown2">72:00:00</div>
+                    <div class="text-gray-300 mt-2">50% OFF - Save R17,500</div>
+                </div>
+                <a href="#pricing" class="bg-accent text-primary px-8 py-4 rounded-full text-xl font-bold hover:bg-accent-warm transition glow">
+                    🚀 Enroll Now - Limited Time
+                </a>
+                <p class="text-gray-400 mt-4">
+                    💳 Secure payment • 💯 30-day guarantee • 🎓 Lifetime access
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendly Widget Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | AI Training Excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const countdownElements = document.querySelectorAll('#countdown, #countdown2');
+            const now = new Date().getTime();
+            const endTime = now + (72 * 60 * 60 * 1000); // 72 hours from now
+            
+            function tick() {
+                const currentTime = new Date().getTime();
+                const timeLeft = endTime - currentTime;
+                
+                if (timeLeft > 0) {
+                    const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                    
+                    const display = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    countdownElements.forEach(el => {
+                        if (el) el.textContent = display;
+                    });
+                } else {
+                    countdownElements.forEach(el => {
+                        if (el) el.textContent = "EXPIRED";
+                    });
+                }
+            }
+            
+            tick();
+            setInterval(tick, 1000);
+        }
+        
+        updateCountdown();
+        
+        // Enrollment functions
+        function enrollInCourse(level) {
+            // Store enrollment intent
+            localStorage.setItem('enrollmentLevel', level);
+            
+            // In a real implementation, this would redirect to payment processor
+            alert(`Enrolling in ${level} course! You'll be redirected to payment processing.`);
+            
+            // For demo, redirect to consultation booking
+            if (typeof Calendly !== 'undefined') {
+                Calendly.initPopupWidget({
+                    url: 'https://calendly.com/zubeid-hendricks/ai-strategy-consultation'
+                });
+            }
+        }
+        
+        function bookConsultation() {
+            if (typeof Calendly !== 'undefined') {
+                Calendly.initPopupWidget({
+                    url: 'https://calendly.com/zubeid-hendricks/ai-strategy-consultation'
+                });
+            } else {
+                window.location.href = 'free-consultation.html';
+            }
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Training Programs - Prickly Pair Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        /* Gumroad button styling */
+        .gumroad-button {
+            display: inline-block !important;
+            background: linear-gradient(135deg, #00D4FF, #0099CC) !important;
+            border: none !important;
+            border-radius: 50px !important;
+            padding: 12px 24px !important;
+            font-weight: bold !important;
+            color: #0A0A0A !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+        }
+        
+        .gumroad-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .gumroad-button:visited {
+            color: #0A0A0A !important;
+        }
+    </style>
+    <!-- Gumroad Script -->
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+</head>
+<body class="font-body">
+    <!-- Navigation -->
+    <nav class="glass py-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                <a href="index.html">Prickly Pair Studios</a>
+            </div>
+            <div class="space-x-6">
+                <a href="index.html#about" class="hover:text-accent transition">About</a>
+                <a href="services.html" class="hover:text-accent transition">Services</a>
+                <a href="index.html#solutions" class="hover:text-accent transition">AI MAS</a>
+                <a href="index.html#projects" class="hover:text-accent transition">Projects</a>
+                <a href="training.html" class="text-accent">Training</a>
+                <a href="community.html" class="hover:text-accent transition">Community</a>
+                <a href="index.html#contact" class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition glow">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="glass p-12 rounded-2xl max-w-5xl mx-auto">
+                <h1 class="text-6xl font-bold mb-6 text-accent">AI Training Programs</h1>
+                <p class="text-2xl mb-6 text-gray-300">Master the Future of Technology</p>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">Comprehensive AI education programs designed to transform individuals and teams into AI experts. From beginner to advanced levels.</p>
+                <a href="#programs" class="bg-accent text-primary px-8 py-3 rounded-full hover:bg-accent-warm transition glow font-semibold">
+                    Explore Programs
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Training Programs -->
+    <section id="programs" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Training Programs</h2>
+            
+            <!-- Beginner Programs -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold mb-8 text-accent">Beginner Level</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass p-8 rounded-xl hover:glow transition">
+                        <h4 class="text-2xl font-bold mb-4 text-accent">AI Fundamentals</h4>
+                        <p class="text-gray-300 mb-4">Perfect introduction to artificial intelligence concepts and applications.</p>
+                        <ul class="text-gray-400 space-y-2 mb-6">
+                            <li>• What is AI and Machine Learning</li>
+                            <li>• AI applications in business</li>
+                            <li>• Hands-on with ChatGPT & Claude</li>
+                            <li>• Building your first AI workflow</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent font-semibold">R2,500 | 2 Days</span>
+                            <button class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition">Enroll</button>
+                        </div>
+                    </div>
+
+                    <div class="glass p-8 rounded-xl hover:glow transition">
+                        <h4 class="text-2xl font-bold mb-4 text-accent">Prompt Engineering Mastery</h4>
+                        <p class="text-gray-300 mb-4">Learn to communicate effectively with AI models for maximum results.</p>
+                        <ul class="text-gray-400 space-y-2 mb-6">
+                            <li>• Advanced prompting techniques</li>
+                            <li>• Chain-of-thought reasoning</li>
+                            <li>• Multi-modal prompting</li>
+                            <li>• Business prompt templates</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent font-semibold">R3,500 | 3 Days</span>
+                            <button class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intermediate Programs -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold mb-8 text-accent">Intermediate Level</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass p-8 rounded-xl hover:glow transition">
+                        <h4 class="text-2xl font-bold mb-4 text-accent">AI Agent Development</h4>
+                        <p class="text-gray-300 mb-4">Build intelligent agents that can perform complex tasks autonomously.</p>
+                        <ul class="text-gray-400 space-y-2 mb-6">
+                            <li>• LangChain framework</li>
+                            <li>• Agent architectures</li>
+                            <li>• Tool integration</li>
+                            <li>• Memory and context management</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent font-semibold">R8,500 | 5 Days</span>
+                            <button class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition">Enroll</button>
+                        </div>
+                    </div>
+
+                    <div class="glass p-8 rounded-xl hover:glow transition">
+                        <h4 class="text-2xl font-bold mb-4 text-accent">RAG Systems Development</h4>
+                        <p class="text-gray-300 mb-4">Create Retrieval-Augmented Generation systems for enterprise knowledge.</p>
+                        <ul class="text-gray-400 space-y-2 mb-6">
+                            <li>• Vector databases</li>
+                            <li>• Document processing</li>
+                            <li>• Semantic search</li>
+                            <li>• Production deployment</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent font-semibold">R7,500 | 4 Days</span>
+                            <button class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Programs -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold mb-8 text-accent">Advanced Level</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass p-8 rounded-xl hover:glow transition">
+                        <h4 class="text-2xl font-bold mb-4 text-accent">Multi-Agent Systems (MAS)</h4>
+                        <p class="text-gray-300 mb-4">Master the art of building collaborative AI agent networks.</p>
+                        <ul class="text-gray-400 space-y-2 mb-6">
+                            <li>• CrewAI orchestration</li>
+                            <li>• Agent communication protocols</li>
+                            <li>• Workflow automation</li>
+                            <li>• Enterprise deployment</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent font-semibold">R15,000 | 7 Days</span>
+                            <button class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition">Enroll</button>
+                        </div>
+                    </div>
+
+                    <div class="glass p-8 rounded-xl hover:glow transition">
+                        <h4 class="text-2xl font-bold mb-4 text-accent">Custom Model Training</h4>
+                        <p class="text-gray-300 mb-4">Learn to fine-tune and train AI models for specific business needs.</p>
+                        <ul class="text-gray-400 space-y-2 mb-6">
+                            <li>• Model fine-tuning techniques</li>
+                            <li>• Dataset preparation</li>
+                            <li>• Training pipelines</li>
+                            <li>• Model optimization</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-accent font-semibold">R18,000 | 8 Days</span>
+                            <button class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corporate Training -->
+            <div class="glass p-12 rounded-2xl">
+                <h3 class="text-3xl font-bold mb-6 text-accent text-center">Corporate Training Programs</h3>
+                <p class="text-gray-300 text-center mb-8 max-w-3xl mx-auto">
+                    Customized training programs designed for teams and organizations looking to implement AI at scale.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-accent text-4xl mb-4">🏢</div>
+                        <h4 class="text-xl font-semibold mb-3 text-accent">Enterprise AI Strategy</h4>
+                        <p class="text-gray-300">Strategic planning and implementation roadmaps for enterprise AI adoption.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-accent text-4xl mb-4">👥</div>
+                        <h4 class="text-xl font-semibold mb-3 text-accent">Team Workshops</h4>
+                        <p class="text-gray-300">Hands-on workshops tailored to your team's specific needs and industry.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-accent text-4xl mb-4">🎯</div>
+                        <h4 class="text-xl font-semibold mb-3 text-accent">Custom Curriculum</h4>
+                        <p class="text-gray-300">Bespoke training programs designed around your business objectives.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="mailto:zubeid.hendricks@gmail.com" class="bg-accent text-primary px-8 py-3 rounded-full hover:bg-accent-warm transition glow font-semibold">
+                        Request Corporate Training Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Why Choose Our Training?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-accent text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Practical Focus</h3>
+                    <p class="text-gray-300">Real-world projects and hands-on experience</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-accent text-4xl mb-4">👨‍💼</div>
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Expert Instructors</h3>
+                    <p class="text-gray-300">Learn from industry practitioners</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-accent text-4xl mb-4">📜</div>
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Certification</h3>
+                    <p class="text-gray-300">Industry-recognized certificates</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-accent text-4xl mb-4">🤝</div>
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Ongoing Support</h3>
+                    <p class="text-gray-300">Community access and mentorship</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Resources Section -->
+    <section class="py-16 bg-secondary/30">
+        <div class="container mx-auto px-4 text-center">
+            <div class="glass p-8 rounded-2xl max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-accent">Start Learning Before You Enroll</h2>
+                <p class="text-lg mb-8 text-gray-300">Get our digital resources to begin your AI journey immediately</p>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-2xl mb-2">📚</div>
+                        <h3 class="font-bold text-white mb-2">Free AI Guide</h3>
+                        <p class="text-gray-300 text-sm mb-4">50-page starter guide</p>
+                        <a href="ai-starter-guide.html" class="bg-accent text-primary px-4 py-2 rounded-full font-bold hover:bg-accent-warm transition text-sm">
+                            Download Free
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl mb-2">🎯</div>
+                        <h3 class="font-bold text-white mb-2">Prompts Pack</h3>
+                        <p class="text-gray-300 text-sm mb-4">500+ AI prompts - R299</p>
+                        <a class="gumroad-button text-sm" href="https://gumroad.com/l/ai-prompts-pack?wanted=true" target="_blank">
+                            Get Prompts
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl mb-2">📖</div>
+                        <h3 class="font-bold text-white mb-2">All Products</h3>
+                        <p class="text-gray-300 text-sm mb-4">Complete collection</p>
+                        <a href="digital-products.html" class="bg-accent-warm text-white px-4 py-2 rounded-full font-bold hover:opacity-90 transition text-sm">
+                            Browse All
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="glass p-12 rounded-2xl max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6 text-accent">Ready to Start Your AI Journey?</h2>
+                <p class="text-xl mb-8 text-gray-300">Join thousands of professionals who have transformed their careers with AI</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="training-funnel.html" class="bg-accent text-primary px-8 py-3 rounded-full hover:bg-accent-warm transition glow font-semibold">
+                        🎓 View Training Programs
+                    </a>
+                    <a href="community.html" class="border-2 border-accent text-accent px-8 py-3 rounded-full hover:bg-accent hover:text-primary transition">
+                        Join Community
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | AI Training Excellence</p>
+        </div>
+    </footer>
+</body>
+</html>

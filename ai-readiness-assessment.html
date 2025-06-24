@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Assessment - Prickly Pair Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .question-card {
+            transition: all 0.3s ease;
+        }
+        
+        .question-card.active {
+            transform: scale(1.02);
+            border-color: #00D4FF;
+        }
+        
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+        
+        .option-button {
+            transition: all 0.3s ease;
+        }
+        
+        .option-button:hover {
+            background-color: rgba(0, 212, 255, 0.1);
+            border-color: #00D4FF;
+        }
+        
+        .option-button.selected {
+            background-color: rgba(0, 212, 255, 0.2);
+            border-color: #00D4FF;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+        
+        /* Gumroad button styling */
+        .gumroad-button {
+            display: inline-block !important;
+            background: linear-gradient(135deg, #00D4FF, #0099CC) !important;
+            border: none !important;
+            border-radius: 50px !important;
+            padding: 12px 24px !important;
+            font-weight: bold !important;
+            color: #0A0A0A !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+        }
+        
+        .gumroad-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .gumroad-button:visited {
+            color: #0A0A0A !important;
+        }
+    </style>
+    <!-- Gumroad Script -->
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+</head>
+<body class="font-body">
+    <!-- Simple Navigation -->
+    <nav class="glass py-4 shadow-lg">
+        <div class="container mx-auto flex justify-center items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                Prickly Pair Studios
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-5xl font-bold mb-6 text-accent">AI Readiness Assessment</h1>
+                <p class="text-xl mb-8 text-gray-300">
+                    Discover your organization's AI potential and get a personalized roadmap in just 3 minutes
+                </p>
+                <div class="glass p-6 rounded-xl mb-8">
+                    <div class="flex justify-center items-center space-x-8">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent">3 Min</div>
+                            <div class="text-gray-300">Quick Assessment</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent">12</div>
+                            <div class="text-gray-300">Key Questions</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent">100%</div>
+                            <div class="text-gray-300">Free Report</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Form -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Progress Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-accent font-semibold">Progress</span>
+                        <span class="text-accent font-semibold" id="progressText">0%</span>
+                    </div>
+                    <div class="w-full bg-secondary rounded-full h-3">
+                        <div class="progress-bar bg-accent h-3 rounded-full" style="width: 0%" id="progressBar"></div>
+                    </div>
+                </div>
+
+                <!-- Lead Capture First -->
+                <div class="glass p-8 rounded-2xl mb-8" id="leadCapture">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">📊</div>
+                        <h2 class="text-3xl font-bold text-accent mb-4">Get Your Personalized AI Report</h2>
+                        <p class="text-gray-300">Enter your details to receive your custom AI readiness score and recommendations</p>
+                    </div>
+
+                    <form id="contactForm" class="max-w-2xl mx-auto">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-300 mb-2">First Name *</label>
+                                <input type="text" name="firstName" required 
+                                       class="w-full p-3 rounded-lg bg-secondary border border-accent/30 text-white focus:border-accent focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2">Last Name *</label>
+                                <input type="text" name="lastName" required 
+                                       class="w-full p-3 rounded-lg bg-secondary border border-accent/30 text-white focus:border-accent focus:outline-none">
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <label class="block text-gray-300 mb-2">Business Email *</label>
+                            <input type="email" name="email" required 
+                                   class="w-full p-3 rounded-lg bg-secondary border border-accent/30 text-white focus:border-accent focus:outline-none">
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mt-6">
+                            <div>
+                                <label class="block text-gray-300 mb-2">Company Name</label>
+                                <input type="text" name="company" 
+                                       class="w-full p-3 rounded-lg bg-secondary border border-accent/30 text-white focus:border-accent focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2">Industry</label>
+                                <select name="industry" class="w-full p-3 rounded-lg bg-secondary border border-accent/30 text-white focus:border-accent focus:outline-none">
+                                    <option value="">Select Industry</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="finance">Finance</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="education">Education</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-accent text-primary py-4 rounded-lg font-bold text-lg hover:bg-accent-warm transition glow mt-8">
+                            Start AI Assessment 🚀
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Assessment Questions (Hidden Initially) -->
+                <div id="assessmentQuestions" class="hidden">
+                    <!-- Questions will be dynamically populated here -->
+                </div>
+
+                <!-- Results Section (Hidden Initially) -->
+                <div id="resultsSection" class="hidden">
+                    <div class="glass p-8 rounded-2xl text-center">
+                        <div class="text-6xl mb-6" id="scoreEmoji">🎯</div>
+                        <h2 class="text-4xl font-bold text-accent mb-4">Your AI Readiness Score</h2>
+                        <div class="text-8xl font-bold text-accent mb-6" id="finalScore">0</div>
+                        <div class="text-2xl text-gray-300 mb-8" id="scoreCategory">Calculating...</div>
+                        
+                        <div class="max-w-3xl mx-auto mb-8">
+                            <div class="glass p-6 rounded-xl text-left" id="recommendations">
+                                <h3 class="text-2xl font-bold text-accent mb-4">Your Personalized Recommendations:</h3>
+                                <div id="recommendationsList">
+                                    <!-- Recommendations will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Personalized Product Recommendation -->
+                            <div class="glass p-6 rounded-xl border-2 border-accent" id="productRecommendation">
+                                <!-- This will be populated based on score -->
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <button onclick="downloadReport()" class="bg-accent text-primary px-8 py-3 rounded-full font-bold hover:bg-accent-warm transition glow">
+                                    📄 Download Full Report
+                                </button>
+                                <div>
+                                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/zubeid-hendricks/ai-strategy-consultation'});return false;" class="bg-accent-warm text-white px-8 py-3 rounded-full font-bold hover:opacity-90 transition">
+                                        📅 Book Free Strategy Call
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendly Widget Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | AI Readiness Assessment</p>
+        </div>
+    </footer>
+
+    <script>
+        // Assessment Questions Data
+        const questions = [
+            {
+                id: 1,
+                question: "What best describes your current AI experience?",
+                options: [
+                    { text: "No experience with AI", score: 1 },
+                    { text: "Basic understanding of AI concepts", score: 2 },
+                    { text: "Some experience with AI tools", score: 3 },
+                    { text: "Advanced AI knowledge and implementation", score: 4 }
+                ]
+            },
+            {
+                id: 2,
+                question: "How would you rate your organization's data quality and accessibility?",
+                options: [
+                    { text: "Poor - data is scattered and inconsistent", score: 1 },
+                    { text: "Fair - some data organization efforts", score: 2 },
+                    { text: "Good - well-organized and mostly accessible", score: 3 },
+                    { text: "Excellent - clean, structured, and easily accessible", score: 4 }
+                ]
+            },
+            {
+                id: 3,
+                question: "What is your organization's size?",
+                options: [
+                    { text: "Solo entrepreneur or freelancer", score: 2 },
+                    { text: "Small business (2-50 employees)", score: 3 },
+                    { text: "Medium business (51-500 employees)", score: 4 },
+                    { text: "Large enterprise (500+ employees)", score: 4 }
+                ]
+            },
+            {
+                id: 4,
+                question: "How tech-savvy is your team?",
+                options: [
+                    { text: "Basic computer skills only", score: 1 },
+                    { text: "Comfortable with standard software", score: 2 },
+                    { text: "Good with technology and new tools", score: 3 },
+                    { text: "Very tech-savvy with development experience", score: 4 }
+                ]
+            },
+            {
+                id: 5,
+                question: "What's your budget range for AI initiatives?",
+                options: [
+                    { text: "Under R10,000", score: 1 },
+                    { text: "R10,000 - R50,000", score: 2 },
+                    { text: "R50,000 - R200,000", score: 3 },
+                    { text: "Over R200,000", score: 4 }
+                ]
+            },
+            {
+                id: 6,
+                question: "Which business areas do you want to improve with AI? (Choose primary focus)",
+                options: [
+                    { text: "Customer service and support", score: 3 },
+                    { text: "Marketing and sales automation", score: 3 },
+                    { text: "Operations and process automation", score: 4 },
+                    { text: "Data analysis and insights", score: 4 }
+                ]
+            },
+            {
+                id: 7,
+                question: "How urgent is your AI implementation timeline?",
+                options: [
+                    { text: "Just exploring options", score: 1 },
+                    { text: "Planning for next year", score: 2 },
+                    { text: "Need implementation within 6 months", score: 3 },
+                    { text: "Urgent - need to start immediately", score: 4 }
+                ]
+            },
+            {
+                id: 8,
+                question: "What's your biggest concern about AI implementation?",
+                options: [
+                    { text: "Cost and ROI uncertainty", score: 2 },
+                    { text: "Technical complexity", score: 1 },
+                    { text: "Team training and adoption", score: 2 },
+                    { text: "Data privacy and security", score: 3 }
+                ]
+            },
+            {
+                id: 9,
+                question: "How much time can you dedicate to AI learning and implementation?",
+                options: [
+                    { text: "1-2 hours per week", score: 1 },
+                    { text: "3-5 hours per week", score: 2 },
+                    { text: "6-10 hours per week", score: 3 },
+                    { text: "Full-time dedication possible", score: 4 }
+                ]
+            },
+            {
+                id: 10,
+                question: "Do you have existing automation or AI tools in use?",
+                options: [
+                    { text: "No automation at all", score: 1 },
+                    { text: "Basic automation (email, scheduling)", score: 2 },
+                    { text: "Some AI tools (ChatGPT, basic automation)", score: 3 },
+                    { text: "Advanced AI/automation systems", score: 4 }
+                ]
+            },
+            {
+                id: 11,
+                question: "What's your primary business goal for AI?",
+                options: [
+                    { text: "Reduce costs and increase efficiency", score: 3 },
+                    { text: "Improve customer experience", score: 3 },
+                    { text: "Generate new revenue streams", score: 4 },
+                    { text: "Stay competitive in the market", score: 2 }
+                ]
+            },
+            {
+                id: 12,
+                question: "How comfortable are you with cloud-based solutions?",
+                options: [
+                    { text: "Prefer on-premise solutions only", score: 1 },
+                    { text: "Some concerns but open to cloud", score: 2 },
+                    { text: "Comfortable with cloud solutions", score: 3 },
+                    { text: "Prefer cloud-first approach", score: 4 }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let totalScore = 0;
+        let answers = [];
+        let userInfo = {};
+
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            userInfo = Object.fromEntries(formData);
+            
+            // Hide lead capture and show questions
+            document.getElementById('leadCapture').classList.add('hidden');
+            document.getElementById('assessmentQuestions').classList.remove('hidden');
+            
+            // Start the assessment
+            showQuestion(0);
+        });
+
+        function showQuestion(index) {
+            if (index >= questions.length) {
+                showResults();
+                return;
+            }
+
+            const question = questions[index];
+            const progress = ((index) / questions.length) * 100;
+            
+            // Update progress
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressText').textContent = Math.round(progress) + '%';
+
+            // Create question HTML
+            const questionHTML = `
+                <div class="glass p-8 rounded-2xl question-card active">
+                    <div class="mb-6">
+                        <div class="text-accent font-semibold mb-2">Question ${index + 1} of ${questions.length}</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">${question.question}</h3>
+                    </div>
+                    <div class="space-y-3">
+                        ${question.options.map((option, optionIndex) => `
+                            <button onclick="selectAnswer(${index}, ${optionIndex}, ${option.score})" 
+                                    class="option-button w-full p-4 text-left border border-gray-600 rounded-lg hover:border-accent transition">
+                                ${option.text}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('assessmentQuestions').innerHTML = questionHTML;
+        }
+
+        function selectAnswer(questionIndex, optionIndex, score) {
+            // Store answer
+            answers[questionIndex] = {
+                question: questions[questionIndex].question,
+                answer: questions[questionIndex].options[optionIndex].text,
+                score: score
+            };
+            
+            totalScore += score;
+            
+            // Visual feedback
+            const buttons = document.querySelectorAll('.option-button');
+            buttons.forEach((btn, index) => {
+                if (index === optionIndex) {
+                    btn.classList.add('selected');
+                } else {
+                    btn.classList.remove('selected');
+                }
+            });
+
+            // Move to next question after delay
+            setTimeout(() => {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            }, 500);
+        }
+
+        function showResults() {
+            // Update progress to 100%
+            document.getElementById('progressBar').style.width = '100%';
+            document.getElementById('progressText').textContent = '100%';
+
+            // Calculate percentage score
+            const maxScore = questions.length * 4;
+            const percentageScore = Math.round((totalScore / maxScore) * 100);
+            
+            // Determine category and recommendations
+            let category, emoji, recommendations;
+            
+            if (percentageScore < 30) {
+                category = "AI Beginner - Great Potential!";
+                emoji = "🌱";
+                recommendations = [
+                    "Start with our AI Fundamentals training program",
+                    "Begin with simple AI tools like ChatGPT for daily tasks",
+                    "Focus on data organization and quality improvement",
+                    "Consider our AI Starter Guide for foundational knowledge"
+                ];
+            } else if (percentageScore < 50) {
+                category = "AI Explorer - Ready to Grow!";
+                emoji = "🚀";
+                recommendations = [
+                    "Implement no-code AI solutions for quick wins",
+                    "Invest in team AI literacy training",
+                    "Start with process automation in one department",
+                    "Book a consultation to create your AI roadmap"
+                ];
+            } else if (percentageScore < 75) {
+                category = "AI Adopter - Accelerate Your Journey!";
+                emoji = "⚡";
+                recommendations = [
+                    "Deploy Multi-Agent Systems for complex workflows",
+                    "Integrate custom AI solutions for competitive advantage",
+                    "Scale successful AI pilots across the organization",
+                    "Consider advanced AI training for your technical team"
+                ];
+            } else {
+                category = "AI Leader - Pioneer the Future!";
+                emoji = "🏆";
+                recommendations = [
+                    "Implement cutting-edge AI research and development",
+                    "Create AI-powered products and services",
+                    "Lead industry transformation with innovative AI solutions",
+                    "Partner with us for enterprise AI consulting"
+                ];
+            }
+
+            // Show results
+            document.getElementById('assessmentQuestions').classList.add('hidden');
+            document.getElementById('resultsSection').classList.remove('hidden');
+            
+            // Animate score
+            document.getElementById('finalScore').textContent = percentageScore;
+            document.getElementById('scoreCategory').textContent = category;
+            document.getElementById('scoreEmoji').textContent = emoji;
+            
+            // Show recommendations
+            const recommendationsList = document.getElementById('recommendationsList');
+            recommendationsList.innerHTML = recommendations.map(rec => 
+                `<div class="flex items-start mb-3">
+                    <div class="text-accent mr-3 mt-1">•</div>
+                    <div class="text-gray-300">${rec}</div>
+                </div>`
+            ).join('');
+
+            // Store results for report generation
+            window.assessmentResults = {
+                userInfo,
+                score: percentageScore,
+                category,
+                recommendations,
+                answers,
+                totalScore,
+                maxScore
+            };
+        }
+
+        function showProductRecommendation(score, category) {
+            let product, description, price, url, benefits;
+            
+            if (score < 30) {
+                product = "AI Prompts Mastery Pack";
+                description = "Perfect for beginners - start with 500+ ready-to-use AI prompts";
+                price = "R299";
+                url = "https://gumroad.com/l/ai-prompts-pack?wanted=true";
+                benefits = [
+                    "500+ business-ready prompts",
+                    "Marketing & content templates", 
+                    "Customer service scripts",
+                    "Quick wins within 24 hours"
+                ];
+            } else if (score < 50) {
+                product = "AI Business Transformation Kit";
+                description = "Ready to grow? Get the complete toolkit for AI implementation";
+                price = "R899";
+                url = "https://gumroad.com/l/ai-transformation-kit?wanted=true";
+                benefits = [
+                    "50+ implementation templates",
+                    "ROI calculation frameworks",
+                    "Change management guides",
+                    "Step-by-step action plans"
+                ];
+            } else if (score < 75) {
+                product = "Multi-Agent Systems Blueprint";
+                description = "Advanced user? Master the cutting-edge of AI with MAS";
+                price = "R599";
+                url = "https://gumroad.com/l/mas-blueprint?wanted=true";
+                benefits = [
+                    "120-page comprehensive guide",
+                    "CrewAI framework mastery",
+                    "10 real-world case studies",
+                    "Advanced architecture patterns"
+                ];
+            } else {
+                product = "Enterprise AI Playbook";
+                description = "AI Leader? Scale your expertise with our enterprise guide";
+                price = "R1,299";
+                url = "https://gumroad.com/l/enterprise-ai-playbook?wanted=true";
+                benefits = [
+                    "200-page strategic guide",
+                    "Enterprise architecture blueprints",
+                    "Governance frameworks",
+                    "Bonus: 1-hour consultation"
+                ];
+            }
+            
+            const productHtml = `
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-accent mb-2">📚 Recommended for You</h3>
+                    <p class="text-gray-300">${description}</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-3">${product}</h4>
+                        <ul class="text-gray-300 space-y-1 mb-4 text-sm">
+                            ${benefits.map(benefit => `<li>• ${benefit}</li>`).join('')}
+                        </ul>
+                        <div class="text-accent font-semibold">⭐ Perfect match for your score: ${score}/100</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-accent mb-4">${price}</div>
+                        <a class="gumroad-button block" href="${url}" target="_blank">
+                            🛒 Get ${product}
+                        </a>
+                        <p class="text-gray-400 text-sm mt-2">Instant download • 30-day guarantee</p>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('productRecommendation').innerHTML = productHtml;
+        }
+
+        function downloadReport() {
+            // In a real implementation, this would generate a PDF report
+            // For now, we'll create a simple text report
+            const results = window.assessmentResults;
+            
+            let reportContent = `AI READINESS ASSESSMENT REPORT
+            
+Name: ${results.userInfo.firstName} ${results.userInfo.lastName}
+Company: ${results.userInfo.company || 'Not specified'}
+Industry: ${results.userInfo.industry || 'Not specified'}
+Email: ${results.userInfo.email}
+
+OVERALL SCORE: ${results.score}/100
+CATEGORY: ${results.category}
+
+DETAILED RECOMMENDATIONS:
+${results.recommendations.map((rec, index) => `${index + 1}. ${rec}`).join('\n')}
+
+NEXT STEPS:
+1. Book a free consultation with our AI experts
+2. Download our AI Starter Guide
+3. Join our AI community for ongoing support
+4. Consider our training programs based on your level
+
+Contact Information:
+Email: zubeid.hendricks@gmail.com
+Phone: 0632205343
+Website: pricklypairstudios.com
+
+This report was generated by Prickly Pair Studios AI Readiness Assessment.
+`;
+
+            // Create and download file
+            const blob = new Blob([reportContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `AI_Readiness_Report_${results.userInfo.firstName}_${results.userInfo.lastName}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

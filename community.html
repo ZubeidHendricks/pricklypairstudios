@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Community - Prickly Pair Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .discord-gradient {
+            background: linear-gradient(135deg, #5865F2, #7289DA);
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Navigation -->
+    <nav class="glass py-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                <a href="index.html">Prickly Pair Studios</a>
+            </div>
+            <div class="space-x-6">
+                <a href="index.html#about" class="hover:text-accent transition">About</a>
+                <a href="services.html" class="hover:text-accent transition">Services</a>
+                <a href="index.html#solutions" class="hover:text-accent transition">AI MAS</a>
+                <a href="index.html#projects" class="hover:text-accent transition">Projects</a>
+                <a href="training.html" class="hover:text-accent transition">Training</a>
+                <a href="community.html" class="text-accent">Community</a>
+                <a href="index.html#contact" class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition glow">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="glass p-12 rounded-2xl max-w-5xl mx-auto">
+                <h1 class="text-6xl font-bold mb-6 text-accent">Join Our AI Community</h1>
+                <p class="text-2xl mb-6 text-gray-300">Connect. Learn. Build. Together.</p>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+                    Join thousands of AI enthusiasts, developers, and innovators in our thriving community. 
+                    Share knowledge, collaborate on projects, and stay ahead of the AI revolution.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://discord.gg/pricklypairstudios" target="_blank" class="discord-gradient text-white px-8 py-3 rounded-full hover:opacity-90 transition glow font-semibold">
+                        🎮 Join Discord Server
+                    </a>
+                    <a href="https://youtube.com/@codewithzubeid" target="_blank" class="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition glow font-semibold">
+                        📺 Subscribe on YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Community Features -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">What You'll Get</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-xl hover:glow transition text-center">
+                    <div class="text-accent text-5xl mb-4">💬</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Discord Community</h3>
+                    <p class="text-gray-300">24/7 active community with dedicated channels for different AI topics, project collaboration, and real-time support.</p>
+                </div>
+
+                <div class="glass p-8 rounded-xl hover:glow transition text-center">
+                    <div class="text-accent text-5xl mb-4">📚</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Exclusive Resources</h3>
+                    <p class="text-gray-300">Access to premium tutorials, code templates, AI tools, and insider knowledge shared only with community members.</p>
+                </div>
+
+                <div class="glass p-8 rounded-xl hover:glow transition text-center">
+                    <div class="text-accent text-5xl mb-4">🤝</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Collaboration</h3>
+                    <p class="text-gray-300">Find project partners, join hackathons, and work on real-world AI projects with fellow community members.</p>
+                </div>
+
+                <div class="glass p-8 rounded-xl hover:glow transition text-center">
+                    <div class="text-accent text-5xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Weekly Challenges</h3>
+                    <p class="text-gray-300">Participate in coding challenges, AI competitions, and skill-building exercises with prizes and recognition.</p>
+                </div>
+
+                <div class="glass p-8 rounded-xl hover:glow transition text-center">
+                    <div class="text-accent text-5xl mb-4">👨‍🏫</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Expert Mentorship</h3>
+                    <p class="text-gray-300">Direct access to Zubeid and other AI experts for guidance, code reviews, and career advice.</p>
+                </div>
+
+                <div class="glass p-8 rounded-xl hover:glow transition text-center">
+                    <div class="text-accent text-5xl mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Early Access</h3>
+                    <p class="text-gray-300">Be the first to access new tools, courses, and AI developments before they're released to the public.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord Channels -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="glass p-12 rounded-2xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent">Discord Server Channels</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="border border-accent/20 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-accent">#🤖・ai-general</h3>
+                        <p class="text-gray-300">General AI discussions and news</p>
+                    </div>
+                    <div class="border border-accent/20 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-accent">#👥・multi-agent-systems</h3>
+                        <p class="text-gray-300">MAS development and CrewAI</p>
+                    </div>
+                    <div class="border border-accent/20 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-accent">#💻・code-help</h3>
+                        <p class="text-gray-300">Get help with your AI projects</p>
+                    </div>
+                    <div class="border border-accent/20 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-accent">#🎯・project-showcase</h3>
+                        <p class="text-gray-300">Show off your AI creations</p>
+                    </div>
+                    <div class="border border-accent/20 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-accent">#📰・ai-news</h3>
+                        <p class="text-gray-300">Latest AI industry updates</p>
+                    </div>
+                    <div class="border border-accent/20 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-accent">#🏢・business-ai</h3>
+                        <p class="text-gray-300">AI for business applications</p>
+                    </div>
+                    <div class="border border-accent/20 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-accent">#🎓・learning-resources</h3>
+                        <p class="text-gray-300">Courses, tutorials, and guides</p>
+                    </div>
+                    <div class="border border-accent/20 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-accent">#💼・job-opportunities</h3>
+                        <p class="text-gray-300">AI career opportunities</p>
+                    </div>
+                    <div class="border border-accent/20 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-accent">#🎉・community-events</h3>
+                        <p class="text-gray-300">Webinars, meetups, and events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Stats -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="glass p-12 rounded-2xl text-center">
+                <h2 class="text-4xl font-bold mb-12 text-accent">Community Impact</h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="text-4xl font-bold text-accent mb-2">5,000+</div>
+                        <p class="text-gray-300">Active Members</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-accent mb-2">200+</div>
+                        <p class="text-gray-300">Projects Shared</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-accent mb-2">150+</div>
+                        <p class="text-gray-300">Weekly Messages</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-accent mb-2">50+</div>
+                        <p class="text-gray-300">Countries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Platforms -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Follow Our Content</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="flex items-center mb-6">
+                        <div class="text-red-500 text-4xl mr-4">📺</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-accent">YouTube Channel</h3>
+                            <p class="text-gray-300">@codewithzubeid</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Weekly tutorials, project walkthroughs, and AI development insights. 
+                        Learn by watching real implementations and best practices.
+                    </p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• AI agent building tutorials</li>
+                        <li>• Multi-agent system development</li>
+                        <li>• Business AI implementations</li>
+                        <li>• Live coding sessions</li>
+                    </ul>
+                    <a href="https://youtube.com/@codewithzubeid" target="_blank" class="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition">
+                        Subscribe Now
+                    </a>
+                </div>
+
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="flex items-center mb-6">
+                        <div class="text-blue-500 text-4xl mr-4">💼</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-accent">LinkedIn</h3>
+                            <p class="text-gray-300">Professional Updates</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Professional insights, industry trends, and business AI strategies. 
+                        Follow for career-focused AI content and networking opportunities.
+                    </p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• Industry analysis and trends</li>
+                        <li>• Career development tips</li>
+                        <li>• Business case studies</li>
+                        <li>• Professional networking</li>
+                    </ul>
+                    <a href="https://linkedin.com/in/zubeid-hendricks" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Guidelines -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="glass p-12 rounded-2xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent">Community Guidelines</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-accent">✅ Do</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• Be respectful and inclusive</li>
+                            <li>• Share knowledge and help others</li>
+                            <li>• Ask questions and seek help</li>
+                            <li>• Collaborate on projects</li>
+                            <li>• Share your AI creations</li>
+                            <li>• Provide constructive feedback</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-accent-warm">❌ Don't</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• Spam or self-promote excessively</li>
+                            <li>• Share harmful or malicious code</li>
+                            <li>• Discriminate or harass others</li>
+                            <li>• Share pirated content</li>
+                            <li>• Post off-topic content</li>
+                            <li>• Violate others' intellectual property</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join CTA -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="glass p-12 rounded-2xl max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6 text-accent">Ready to Join the Revolution?</h2>
+                <p class="text-xl mb-8 text-gray-300">
+                    Become part of South Africa's premier AI community and accelerate your journey in artificial intelligence
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                    <a href="https://discord.gg/pricklypairstudios" target="_blank" class="discord-gradient text-white px-8 py-3 rounded-full hover:opacity-90 transition glow font-semibold">
+                        🎮 Join Discord Now
+                    </a>
+                    <a href="mailto:zubeid.hendricks@gmail.com" class="border-2 border-accent text-accent px-8 py-3 rounded-full hover:bg-accent hover:text-primary transition">
+                        Get Invited
+                    </a>
+                </div>
+                <p class="text-gray-400">Join 5,000+ AI enthusiasts from around the world</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | Building the Future of AI Together</p>
+        </div>
+    </footer>
+</body>
+</html>

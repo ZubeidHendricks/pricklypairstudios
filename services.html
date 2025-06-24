@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Services - Prickly Pair Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        /* Gumroad button styling */
+        .gumroad-button {
+            display: inline-block !important;
+            background: linear-gradient(135deg, #00D4FF, #0099CC) !important;
+            border: none !important;
+            border-radius: 50px !important;
+            padding: 12px 24px !important;
+            font-weight: bold !important;
+            color: #0A0A0A !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+        }
+        
+        .gumroad-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .gumroad-button:visited {
+            color: #0A0A0A !important;
+        }
+    </style>
+    <!-- Gumroad Script -->
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+</head>
+<body class="font-body">
+    <!-- Navigation -->
+    <nav class="glass py-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                <a href="index.html">Prickly Pair Studios</a>
+            </div>
+            <div class="space-x-6">
+                <a href="index.html#about" class="hover:text-accent transition">About</a>
+                <a href="services.html" class="text-accent">Services</a>
+                <a href="index.html#solutions" class="hover:text-accent transition">AI MAS</a>
+                <a href="index.html#projects" class="hover:text-accent transition">Projects</a>
+                <a href="training.html" class="hover:text-accent transition">Training</a>
+                <a href="community.html" class="hover:text-accent transition">Community</a>
+                <a href="index.html#contact" class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition glow">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="glass p-12 rounded-2xl max-w-5xl mx-auto">
+                <h1 class="text-6xl font-bold mb-6 text-accent">AI Services</h1>
+                <p class="text-2xl mb-8 text-gray-300">We do <span class="text-accent font-bold">EVERYTHING</span> in AI</p>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">From simple chatbots to complex Multi-Agent Systems, enterprise AI solutions to custom model training - we deliver cutting-edge AI solutions that transform businesses.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Grid -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI Multi-Agent Systems -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">🤖</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">AI Multi-Agent Systems (MAS)</h3>
+                    <p class="text-gray-300 mb-6">Build sophisticated networks of AI agents that collaborate, communicate, and execute complex workflows autonomously.</p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• CrewAI orchestration</li>
+                        <li>• Agent communication protocols</li>
+                        <li>• Workflow automation</li>
+                        <li>• Task delegation systems</li>
+                    </ul>
+                    <div class="text-accent font-semibold">Starting from R15,000</div>
+                </div>
+
+                <!-- Custom AI Model Training -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">🧠</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Custom AI Model Training</h3>
+                    <p class="text-gray-300 mb-6">Train AI models specifically for your business needs, data, and industry requirements.</p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• Fine-tuning LLMs</li>
+                        <li>• Domain-specific training</li>
+                        <li>• Data preprocessing</li>
+                        <li>• Model optimization</li>
+                    </ul>
+                    <div class="text-accent font-semibold">Starting from R25,000</div>
+                </div>
+
+                <!-- AI Chatbots & Assistants -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">💬</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">AI Chatbots & Assistants</h3>
+                    <p class="text-gray-300 mb-6">Intelligent conversational AI that understands context, learns from interactions, and provides exceptional user experiences.</p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• GPT-4 & Claude integration</li>
+                        <li>• Multi-language support</li>
+                        <li>• Context-aware responses</li>
+                        <li>• 24/7 customer support</li>
+                    </ul>
+                    <div class="text-accent font-semibold">Starting from R8,000</div>
+                </div>
+
+                <!-- Enterprise AI Solutions -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">🏢</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Enterprise AI Solutions</h3>
+                    <p class="text-gray-300 mb-6">Large-scale AI implementations that integrate seamlessly with your existing business infrastructure.</p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• AI strategy consulting</li>
+                        <li>• System integration</li>
+                        <li>• Scalable architecture</li>
+                        <li>• Ongoing support</li>
+                    </ul>
+                    <div class="text-accent font-semibold">Contact for Quote</div>
+                </div>
+
+                <!-- AI Workflow Automation -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">AI Workflow Automation</h3>
+                    <p class="text-gray-300 mb-6">Automate complex business processes using AI agents that handle tasks from data processing to decision making.</p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• Process optimization</li>
+                        <li>• Document automation</li>
+                        <li>• Data pipeline creation</li>
+                        <li>• Quality assurance</li>
+                    </ul>
+                    <div class="text-accent font-semibold">Starting from R12,000</div>
+                </div>
+
+                <!-- AI Training Programs -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">🎓</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">AI Training Programs</h3>
+                    <p class="text-gray-300 mb-6">Comprehensive training programs for individuals and teams to master AI development and implementation.</p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• Hands-on workshops</li>
+                        <li>• Corporate training</li>
+                        <li>• Certification programs</li>
+                        <li>• Ongoing mentorship</li>
+                    </ul>
+                    <div class="text-accent font-semibold">Starting from R5,000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="glass p-12 rounded-2xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent">Our AI Development Process</h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-accent text-4xl mb-4">1️⃣</div>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Discovery</h3>
+                        <p class="text-gray-300">We analyze your business needs and identify AI opportunities</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-accent text-4xl mb-4">2️⃣</div>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Design</h3>
+                        <p class="text-gray-300">Create tailored AI architecture and system design</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-accent text-4xl mb-4">3️⃣</div>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Development</h3>
+                        <p class="text-gray-300">Build and train AI models using cutting-edge technologies</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-accent text-4xl mb-4">4️⃣</div>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Deployment</h3>
+                        <p class="text-gray-300">Deploy, monitor, and continuously optimize your AI solution</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Products Section -->
+    <section class="py-16 bg-secondary/30">
+        <div class="container mx-auto px-4 text-center">
+            <div class="glass p-8 rounded-2xl max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-accent">Want to Learn AI Yourself?</h2>
+                <p class="text-lg mb-8 text-gray-300">Get our digital guides and start implementing AI in your business today</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="text-center">
+                        <div class="text-2xl mb-2">🎯</div>
+                        <h3 class="font-bold text-white mb-2">AI Prompts Mastery Pack</h3>
+                        <p class="text-gray-300 text-sm mb-4">500+ ready-to-use business prompts</p>
+                        <div class="text-accent font-bold mb-2">R299</div>
+                        <a class="gumroad-button" href="https://gumroad.com/l/ai-prompts-pack?wanted=true" target="_blank">
+                            Get Prompts Pack
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl mb-2">📚</div>
+                        <h3 class="font-bold text-white mb-2">Complete Bundle</h3>
+                        <p class="text-gray-300 text-sm mb-4">All 4 guides + bonuses (save 25%)</p>
+                        <div class="text-accent font-bold mb-2">R2,999</div>
+                        <a class="gumroad-button" href="https://gumroad.com/l/ai-mastery-bundle?wanted=true" target="_blank">
+                            Get Complete Bundle
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <a href="digital-products.html" class="text-accent hover:text-accent-warm transition">
+                        View All Digital Products →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="glass p-12 rounded-2xl max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6 text-accent">Ready to Transform Your Business with AI?</h2>
+                <p class="text-xl mb-8 text-gray-300">Let's discuss how our AI solutions can revolutionize your operations</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/zubeid-hendricks/ai-strategy-consultation'});return false;" class="bg-accent text-primary px-8 py-3 rounded-full hover:bg-accent-warm transition glow font-semibold">
+                        📅 Book Free Consultation
+                    </a>
+                    <a href="tel:0632205343" class="border-2 border-accent text-accent px-8 py-3 rounded-full hover:bg-accent hover:text-primary transition">
+                        📞 Call: 0632205343
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendly Widget Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | AI Multi-Agent Systems Specialists</p>
+        </div>
+    </footer>
+</body>
+</html>

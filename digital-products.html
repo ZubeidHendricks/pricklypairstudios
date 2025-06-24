@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Digital Products - Prickly Pair Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+        
+        .bestseller {
+            position: relative;
+        }
+        
+        .bestseller::before {
+            content: "BESTSELLER";
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #FF6B35;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .bundle {
+            position: relative;
+            border: 2px solid #00D4FF;
+        }
+        
+        .bundle::before {
+            content: "BEST VALUE";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00D4FF;
+            color: #0A0A0A;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        /* Gumroad button styling */
+        .gumroad-button {
+            display: inline-block !important;
+            background: linear-gradient(135deg, #00D4FF, #0099CC) !important;
+            border: none !important;
+            border-radius: 50px !important;
+            padding: 12px 24px !important;
+            font-weight: bold !important;
+            color: #0A0A0A !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+        }
+        
+        .gumroad-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .gumroad-button:visited {
+            color: #0A0A0A !important;
+        }
+    </style>
+    <!-- Gumroad Script -->
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+</head>
+<body class="font-body">
+    <!-- Navigation -->
+    <nav class="glass py-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                <a href="index.html">Prickly Pair Studios</a>
+            </div>
+            <div class="space-x-6">
+                <a href="index.html#about" class="hover:text-accent transition">About</a>
+                <a href="services.html" class="hover:text-accent transition">Services</a>
+                <a href="digital-products.html" class="text-accent">Digital Products</a>
+                <a href="training.html" class="hover:text-accent transition">Training</a>
+                <a href="community.html" class="hover:text-accent transition">Community</a>
+                <a href="index.html#contact" class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition glow">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass p-12 rounded-2xl">
+                    <div class="text-6xl mb-6">📚</div>
+                    <h1 class="text-6xl font-bold mb-6 text-accent leading-tight">
+                        AI Digital Library
+                    </h1>
+                    <p class="text-2xl mb-6 text-gray-300">
+                        Master AI with Our Comprehensive Digital Product Collection
+                    </p>
+                    <p class="text-lg mb-8 text-gray-400 max-w-3xl mx-auto">
+                        From beginner guides to advanced enterprise playbooks - everything you need to 
+                        become an AI expert and transform your business. Instant access, lifetime updates.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="grid md:grid-cols-4 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">2,500+</div>
+                            <div class="text-gray-300">Happy Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">500+</div>
+                            <div class="text-gray-300">AI Prompts</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">50+</div>
+                            <div class="text-gray-300">Business Templates</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">4.9/5</div>
+                            <div class="text-gray-300">Average Rating</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#products" class="bg-accent text-primary px-8 py-4 rounded-full text-xl font-bold hover:bg-accent-warm transition glow">
+                        🛍️ Browse Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Bundle -->
+    <section class="py-16 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass p-8 rounded-2xl bundle">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h2 class="text-4xl font-bold text-accent mb-4">Complete AI Mastery Bundle</h2>
+                            <p class="text-xl text-gray-300 mb-6">
+                                Get ALL our digital products in one comprehensive package and save 25%
+                            </p>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center">
+                                    <div class="text-accent mr-3">✅</div>
+                                    <span class="text-gray-300">All 4 premium guides (worth R3,797)</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-accent mr-3">✅</div>
+                                    <span class="text-gray-300">500+ AI prompts & templates</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-accent mr-3">✅</div>
+                                    <span class="text-gray-300">Lifetime updates & new content</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-accent mr-3">✅</div>
+                                    <span class="text-gray-300">Priority email support</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-accent mr-3">✅</div>
+                                    <span class="text-gray-300">Exclusive community access</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-gray-400 line-through text-xl mb-2">Regular Price: R3,797</div>
+                            <div class="text-5xl font-bold text-accent mb-4">R2,999</div>
+                            <div class="text-green-400 font-semibold mb-6">Save R798 (25% OFF)</div>
+                            
+                            <!-- Gumroad Embed for Bundle -->
+                            <a class="gumroad-button" href="https://gumroad.com/l/ai-mastery-bundle?wanted=true" target="_blank">
+                                💎 Get Complete Bundle
+                            </a>
+                            
+                            <p class="text-gray-400 text-sm mt-4">
+                                🔒 Secure payment via Gumroad • 💯 30-day guarantee
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Products -->
+    <section id="products" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Choose Your AI Learning Path</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Product 1: AI Prompts Mastery Pack -->
+                <div class="glass p-8 rounded-xl product-card bestseller">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🎯</div>
+                        <h3 class="text-2xl font-bold text-accent mb-2">AI Prompts Mastery Pack</h3>
+                        <p class="text-gray-300">500+ Professional AI Prompts for Business</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-accent text-center mb-4">R299</div>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• 500+ curated business prompts</li>
+                            <li>• Marketing & sales templates</li>
+                            <li>• Content creation prompts</li>
+                            <li>• Data analysis queries</li>
+                            <li>• Customer service scripts</li>
+                            <li>• Strategic planning prompts</li>
+                            <li>• Bonus: 50 ChatGPT shortcuts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a class="gumroad-button" href="https://gumroad.com/l/ai-prompts-pack?wanted=true" target="_blank">
+                            🛒 Buy Now - R299
+                        </a>
+                        <p class="text-gray-400 text-sm mt-2">Instant download</p>
+                    </div>
+                </div>
+
+                <!-- Product 2: Multi-Agent Systems Blueprint -->
+                <div class="glass p-8 rounded-xl product-card">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🤖</div>
+                        <h3 class="text-2xl font-bold text-accent mb-2">Multi-Agent Systems Blueprint</h3>
+                        <p class="text-gray-300">Complete Guide to Building AI Agent Networks</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-accent text-center mb-4">R599</div>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• 120-page comprehensive guide</li>
+                            <li>• CrewAI framework mastery</li>
+                            <li>• 10 real-world case studies</li>
+                            <li>• Agent architecture patterns</li>
+                            <li>• Code examples & templates</li>
+                            <li>• Troubleshooting guide</li>
+                            <li>• Bonus: Video tutorials</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a class="gumroad-button" href="https://gumroad.com/l/mas-blueprint?wanted=true" target="_blank">
+                            🛒 Buy Now - R599
+                        </a>
+                        <p class="text-gray-400 text-sm mt-2">Instant download</p>
+                    </div>
+                </div>
+
+                <!-- Product 3: AI Business Transformation Kit -->
+                <div class="glass p-8 rounded-xl product-card">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🚀</div>
+                        <h3 class="text-2xl font-bold text-accent mb-2">AI Business Transformation Kit</h3>
+                        <p class="text-gray-300">Templates & Frameworks for AI Implementation</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-accent text-center mb-4">R899</div>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• 50+ business templates</li>
+                            <li>• AI readiness assessment tool</li>
+                            <li>• ROI calculation frameworks</li>
+                            <li>• Implementation checklists</li>
+                            <li>• Change management guides</li>
+                            <li>• Team training materials</li>
+                            <li>• Bonus: Client proposal templates</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a class="gumroad-button" href="https://gumroad.com/l/ai-transformation-kit?wanted=true" target="_blank">
+                            🛒 Buy Now - R899
+                        </a>
+                        <p class="text-gray-400 text-sm mt-2">Instant download</p>
+                    </div>
+                </div>
+
+                <!-- Product 4: Enterprise AI Playbook -->
+                <div class="glass p-8 rounded-xl product-card">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🏢</div>
+                        <h3 class="text-2xl font-bold text-accent mb-2">Enterprise AI Playbook</h3>
+                        <p class="text-gray-300">Strategic Implementation for Large Organizations</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-accent text-center mb-4">R1,299</div>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• 200-page strategic guide</li>
+                            <li>• Enterprise architecture blueprints</li>
+                            <li>• Governance & compliance frameworks</li>
+                            <li>• Security best practices</li>
+                            <li>• Vendor evaluation criteria</li>
+                            <li>• Executive presentation templates</li>
+                            <li>• Bonus: 1-hour consultation call</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a class="gumroad-button" href="https://gumroad.com/l/enterprise-ai-playbook?wanted=true" target="_blank">
+                            🛒 Buy Now - R1,299
+                        </a>
+                        <p class="text-gray-400 text-sm mt-2">Instant download</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-20 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-accent">What Customers Say</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex text-accent mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-300 italic mb-4">
+                        "The AI Prompts Pack saved me 20 hours per week. The templates are incredible and the results are immediate."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-sm mr-3">JM</div>
+                        <div>
+                            <div class="font-semibold text-white">Jessica Miller</div>
+                            <div class="text-gray-400 text-sm">Marketing Director</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex text-accent mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-300 italic mb-4">
+                        "The MAS Blueprint helped me build my first multi-agent system in just 2 weeks. Worth every cent!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-sm mr-3">DK</div>
+                        <div>
+                            <div class="font-semibold text-white">David Kim</div>
+                            <div class="text-gray-400 text-sm">Software Developer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex text-accent mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-300 italic mb-4">
+                        "The Enterprise Playbook gave us the roadmap we needed. We're already seeing 300% ROI in 6 months."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-sm mr-3">SR</div>
+                        <div>
+                            <div class="font-semibold text-white">Sarah Roberts</div>
+                            <div class="text-gray-400 text-sm">CTO, TechCorp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Products -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Why Choose Our Digital Products?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-accent text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Instant Access</h3>
+                    <p class="text-gray-300">Download immediately after purchase, no waiting</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-accent text-4xl mb-4">🔄</div>
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Lifetime Updates</h3>
+                    <p class="text-gray-300">Get all future versions and improvements free</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-accent text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-semibold mb-3 text-accent">30-Day Guarantee</h3>
+                    <p class="text-gray-300">Full refund if not completely satisfied</p>
+                </div>
+                <div class="glass p-6 rounded-xl text-center">
+                    <div class="text-accent text-4xl mb-4">👨‍💻</div>
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Expert Support</h3>
+                    <p class="text-gray-300">Direct access to Zubeid for questions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">What format are the products in?</h3>
+                    <p class="text-gray-300">All products are delivered as PDF downloads with bonus materials in various formats (templates, checklists, etc.).</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Do I get updates when you improve the products?</h3>
+                    <p class="text-gray-300">Yes! All purchases include lifetime updates. You'll be notified via email when new versions are available.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Can I share these with my team?</h3>
+                    <p class="text-gray-300">Personal use license allows sharing within your organization. For multiple companies, please contact us for enterprise licensing.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">What if I need help implementing the strategies?</h3>
+                    <p class="text-gray-300">All customers get access to our private community and can book consultation calls for additional support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <div class="glass p-12 rounded-2xl">
+                    <h2 class="text-4xl font-bold mb-6 text-accent">Start Your AI Journey Today</h2>
+                    <p class="text-xl mb-8 text-gray-300">
+                        Join 2,500+ professionals who are already using our guides to transform their careers and businesses.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a class="gumroad-button" href="https://gumroad.com/l/ai-mastery-bundle?wanted=true" target="_blank">
+                            💎 Get Complete Bundle - Save 25%
+                        </a>
+                        <a href="ai-starter-guide.html" class="border-2 border-accent text-accent px-8 py-3 rounded-full hover:bg-accent hover:text-primary transition">
+                            📚 Start with Free Guide
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendly Widget Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+    <script src="calendly-widget.js"></script>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | AI Digital Products</p>
+        </div>
+    </footer>
+</body>
+</html>

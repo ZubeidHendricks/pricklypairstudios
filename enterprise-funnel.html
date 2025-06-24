@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise AI Solutions - Prickly Pair Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .stats-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Navigation -->
+    <nav class="glass py-4 shadow-lg">
+        <div class="container mx-auto flex justify-center items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                Prickly Pair Studios
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left Side -->
+                    <div>
+                        <h1 class="text-6xl font-bold mb-6 text-accent leading-tight">
+                            Enterprise AI Solutions
+                        </h1>
+                        <p class="text-2xl mb-6 text-gray-300">
+                            Transform Your Business with Custom AI Implementation
+                        </p>
+                        <p class="text-lg mb-8 text-gray-400">
+                            Join 100+ companies that have reduced costs by 40% and increased productivity by 300% 
+                            with our enterprise AI solutions. From Fortune 500 to fast-growing startups.
+                        </p>
+                        
+                        <!-- Key Benefits -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <div class="text-accent text-2xl mr-4">💰</div>
+                                <div>
+                                    <div class="font-semibold text-white">Average ROI: 400% in 6 months</div>
+                                    <div class="text-gray-400 text-sm">Typical savings: R2-15 million annually</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="text-accent text-2xl mr-4">⚡</div>
+                                <div>
+                                    <div class="font-semibold text-white">Implementation: 2-12 weeks</div>
+                                    <div class="text-gray-400 text-sm">From strategy to full deployment</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="text-accent text-2xl mr-4">🛡️</div>
+                                <div>
+                                    <div class="font-semibold text-white">Enterprise-grade security</div>
+                                    <div class="text-gray-400 text-sm">SOC 2, GDPR, and industry compliance</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="bookStrategicCall()" class="bg-accent text-primary px-8 py-4 rounded-full text-xl font-bold hover:bg-accent-warm transition glow">
+                                📅 Book Strategic Call
+                            </button>
+                            <a href="#case-studies" class="border-2 border-accent text-accent px-8 py-4 rounded-full text-xl hover:bg-accent hover:text-primary transition text-center">
+                                📊 View Case Studies
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Stats -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass p-6 rounded-xl stats-card text-center">
+                            <div class="text-4xl font-bold text-accent mb-2">100+</div>
+                            <div class="text-gray-300">Companies Served</div>
+                        </div>
+                        <div class="glass p-6 rounded-xl stats-card text-center">
+                            <div class="text-4xl font-bold text-accent mb-2">R2.5B</div>
+                            <div class="text-gray-300">Total Savings Generated</div>
+                        </div>
+                        <div class="glass p-6 rounded-xl stats-card text-center">
+                            <div class="text-4xl font-bold text-accent mb-2">95%</div>
+                            <div class="text-gray-300">Client Satisfaction</div>
+                        </div>
+                        <div class="glass p-6 rounded-xl stats-card text-center">
+                            <div class="text-4xl font-bold text-accent mb-2">24/7</div>
+                            <div class="text-gray-300">Enterprise Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-20 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Enterprise AI Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Custom AI Development -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">🏗️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Custom AI Development</h3>
+                    <p class="text-gray-300 mb-6">
+                        Bespoke AI solutions tailored to your specific business needs and industry requirements.
+                    </p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• Multi-Agent Systems (MAS)</li>
+                        <li>• Custom model training</li>
+                        <li>• API development & integration</li>
+                        <li>• Workflow automation</li>
+                    </ul>
+                    <div class="text-accent font-semibold">From R150,000</div>
+                </div>
+
+                <!-- AI Strategy Consulting -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">📋</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">AI Strategy Consulting</h3>
+                    <p class="text-gray-300 mb-6">
+                        Comprehensive AI roadmap and implementation strategy for enterprise transformation.
+                    </p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• AI readiness assessment</li>
+                        <li>• Technology stack planning</li>
+                        <li>• ROI modeling & projections</li>
+                        <li>• Change management</li>
+                    </ul>
+                    <div class="text-accent font-semibold">From R75,000</div>
+                </div>
+
+                <!-- Team Training -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">🎓</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Enterprise Training</h3>
+                    <p class="text-gray-300 mb-6">
+                        Comprehensive AI education programs for teams of 10-500 people.
+                    </p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• Custom curriculum design</li>
+                        <li>• Hands-on workshops</li>
+                        <li>• Certification programs</li>
+                        <li>• Ongoing mentorship</li>
+                    </ul>
+                    <div class="text-accent font-semibold">From R200,000</div>
+                </div>
+
+                <!-- AI Infrastructure -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">☁️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">AI Infrastructure</h3>
+                    <p class="text-gray-300 mb-6">
+                        Scalable, secure AI infrastructure setup and management for enterprise environments.
+                    </p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• Cloud architecture design</li>
+                        <li>• Security implementation</li>
+                        <li>• Performance optimization</li>
+                        <li>• Monitoring & maintenance</li>
+                    </ul>
+                    <div class="text-accent font-semibold">From R300,000</div>
+                </div>
+
+                <!-- Data & Analytics -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">📊</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">AI Analytics Platform</h3>
+                    <p class="text-gray-300 mb-6">
+                        Advanced analytics and business intelligence powered by AI and machine learning.
+                    </p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• Predictive analytics</li>
+                        <li>• Real-time dashboards</li>
+                        <li>• Data pipeline automation</li>
+                        <li>• Custom reporting</li>
+                    </ul>
+                    <div class="text-accent font-semibold">From R250,000</div>
+                </div>
+
+                <!-- Ongoing Support -->
+                <div class="glass p-8 rounded-xl hover:glow transition">
+                    <div class="text-accent text-5xl mb-4">🛠️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Managed AI Services</h3>
+                    <p class="text-gray-300 mb-6">
+                        Complete AI operations management with 24/7 monitoring and support.
+                    </p>
+                    <ul class="text-gray-400 space-y-2 mb-6">
+                        <li>• 24/7 monitoring</li>
+                        <li>• Performance optimization</li>
+                        <li>• Regular updates</li>
+                        <li>• Strategic consulting</li>
+                    </ul>
+                    <div class="text-accent font-semibold">From R50,000/month</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="case-studies" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Success Stories</h2>
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Case Study 1 -->
+                <div class="glass p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl mr-4">🏦</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-accent">Major South African Bank</h3>
+                            <p class="text-gray-400">Financial Services • 15,000+ employees</p>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Challenge:</h4>
+                    <p class="text-gray-300 mb-4">
+                        Manual loan processing taking 7-14 days, high error rates, and customer complaints about slow service.
+                    </p>
+                    <h4 class="text-xl font-bold text-white mb-4">Solution:</h4>
+                    <p class="text-gray-300 mb-4">
+                        Implemented AI-powered document processing and risk assessment system with Multi-Agent workflow.
+                    </p>
+                    <h4 class="text-xl font-bold text-white mb-4">Results:</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-accent/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-accent">85%</div>
+                            <div class="text-gray-300 text-sm">Faster Processing</div>
+                        </div>
+                        <div class="bg-accent/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-accent">R45M</div>
+                            <div class="text-gray-300 text-sm">Annual Savings</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="glass p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl mr-4">🏭</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-accent">Mining Corporation</h3>
+                            <p class="text-gray-400">Mining & Resources • 8,000+ employees</p>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Challenge:</h4>
+                    <p class="text-gray-300 mb-4">
+                        Equipment maintenance schedules were reactive, leading to costly downtime and safety risks.
+                    </p>
+                    <h4 class="text-xl font-bold text-white mb-4">Solution:</h4>
+                    <p class="text-gray-300 mb-4">
+                        Deployed predictive maintenance AI system with IoT integration and automated scheduling.
+                    </p>
+                    <h4 class="text-xl font-bold text-white mb-4">Results:</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-accent/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-accent">60%</div>
+                            <div class="text-gray-300 text-sm">Reduced Downtime</div>
+                        </div>
+                        <div class="bg-accent/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-accent">R120M</div>
+                            <div class="text-gray-300 text-sm">Annual Savings</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="glass p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl mr-4">🛒</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-accent">E-commerce Platform</h3>
+                            <p class="text-gray-400">Retail Technology • 500+ employees</p>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Challenge:</h4>
+                    <p class="text-gray-300 mb-4">
+                        Customer service overwhelmed with 10,000+ daily queries, leading to poor satisfaction scores.
+                    </p>
+                    <h4 class="text-xl font-bold text-white mb-4">Solution:</h4>
+                    <p class="text-gray-300 mb-4">
+                        Built intelligent customer service AI with multi-language support and escalation protocols.
+                    </p>
+                    <h4 class="text-xl font-bold text-white mb-4">Results:</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-accent/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-accent">90%</div>
+                            <div class="text-gray-300 text-sm">Automated Resolution</div>
+                        </div>
+                        <div class="bg-accent/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-accent">R25M</div>
+                            <div class="text-gray-300 text-sm">Annual Savings</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 4 -->
+                <div class="glass p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl mr-4">🏥</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-accent">Healthcare Provider</h3>
+                            <p class="text-gray-400">Healthcare • 12,000+ employees</p>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Challenge:</h4>
+                    <p class="text-gray-300 mb-4">
+                        Administrative burden consuming 40% of medical staff time, reducing patient care quality.
+                    </p>
+                    <h4 class="text-xl font-bold text-white mb-4">Solution:</h4>
+                    <p class="text-gray-300 mb-4">
+                        Implemented AI-powered administrative automation and clinical decision support system.
+                    </p>
+                    <h4 class="text-xl font-bold text-white mb-4">Results:</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-accent/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-accent">70%</div>
+                            <div class="text-gray-300 text-sm">More Patient Time</div>
+                        </div>
+                        <div class="bg-accent/20 p-4 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-accent">R80M</div>
+                            <div class="text-gray-300 text-sm">Annual Savings</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-20 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Our Enterprise Process</h2>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-3xl mx-auto mb-6">1️⃣</div>
+                        <h3 class="text-xl font-bold mb-3 text-accent">Discovery & Assessment</h3>
+                        <p class="text-gray-300">Comprehensive analysis of your business processes, data, and AI readiness.</p>
+                        <div class="text-gray-400 text-sm mt-2">Duration: 1-2 weeks</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-3xl mx-auto mb-6">2️⃣</div>
+                        <h3 class="text-xl font-bold mb-3 text-accent">Strategy & Planning</h3>
+                        <p class="text-gray-300">Custom AI roadmap with clear timelines, milestones, and ROI projections.</p>
+                        <div class="text-gray-400 text-sm mt-2">Duration: 1-2 weeks</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-3xl mx-auto mb-6">3️⃣</div>
+                        <h3 class="text-xl font-bold mb-3 text-accent">Development & Training</h3>
+                        <p class="text-gray-300">Agile development with regular check-ins and team training sessions.</p>
+                        <div class="text-gray-400 text-sm mt-2">Duration: 4-8 weeks</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-3xl mx-auto mb-6">4️⃣</div>
+                        <h3 class="text-xl font-bold mb-3 text-accent">Deployment & Support</h3>
+                        <p class="text-gray-300">Seamless deployment with ongoing monitoring and optimization.</p>
+                        <div class="text-gray-400 text-sm mt-2">Duration: Ongoing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Enterprise Investment Levels</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter -->
+                <div class="glass p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-white mb-4">AI Pilot Program</h3>
+                    <div class="text-4xl font-bold text-accent mb-4">R500K - R2M</div>
+                    <p class="text-gray-300 mb-6">Perfect for testing AI in one department</p>
+                    <ul class="text-gray-300 space-y-3 mb-8">
+                        <li>• Single use case implementation</li>
+                        <li>• 3-month timeline</li>
+                        <li>• Team training (10-20 people)</li>
+                        <li>• Basic integration</li>
+                        <li>• 6 months support</li>
+                    </ul>
+                    <button onclick="bookStrategicCall()" class="w-full bg-accent text-primary py-3 rounded-full font-bold hover:bg-accent-warm transition">
+                        Discuss Pilot Program
+                    </button>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="glass p-8 rounded-xl border-2 border-accent">
+                    <div class="text-center mb-4">
+                        <div class="bg-accent text-primary px-4 py-1 rounded-full text-sm font-bold">MOST POPULAR</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Full Enterprise Solution</h3>
+                    <div class="text-4xl font-bold text-accent mb-4">R2M - R10M</div>
+                    <p class="text-gray-300 mb-6">Complete AI transformation</p>
+                    <ul class="text-gray-300 space-y-3 mb-8">
+                        <li>• Multiple department implementation</li>
+                        <li>• 6-12 month timeline</li>
+                        <li>• Organization-wide training</li>
+                        <li>• Custom AI development</li>
+                        <li>• 24/7 support & monitoring</li>
+                        <li>• Dedicated success manager</li>
+                    </ul>
+                    <button onclick="bookStrategicCall()" class="w-full bg-accent text-primary py-3 rounded-full font-bold hover:bg-accent-warm transition glow">
+                        Book Strategy Session
+                    </button>
+                </div>
+
+                <!-- Enterprise Plus -->
+                <div class="glass p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-white mb-4">AI Innovation Partnership</h3>
+                    <div class="text-4xl font-bold text-accent mb-4">R10M+</div>
+                    <p class="text-gray-300 mb-6">Cutting-edge AI research & development</p>
+                    <ul class="text-gray-300 space-y-3 mb-8">
+                        <li>• Industry-leading AI solutions</li>
+                        <li>• Custom research & development</li>
+                        <li>• Multi-year partnership</li>
+                        <li>• Dedicated AI team</li>
+                        <li>• Intellectual property sharing</li>
+                        <li>• Global expansion support</li>
+                    </ul>
+                    <button onclick="bookStrategicCall()" class="w-full bg-accent text-primary py-3 rounded-full font-bold hover:bg-accent-warm transition">
+                        Explore Partnership
+                    </button>
+                </div>
+            </div>
+
+            <!-- ROI Calculator -->
+            <div class="glass p-8 rounded-xl mt-12 max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold text-accent mb-6 text-center">ROI Calculator</h3>
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-accent mb-2">400%</div>
+                        <div class="text-gray-300">Average ROI</div>
+                        <div class="text-gray-400 text-sm">Within 12 months</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-accent mb-2">6 months</div>
+                        <div class="text-gray-300">Payback Period</div>
+                        <div class="text-gray-400 text-sm">Break-even point</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-accent mb-2">R15M</div>
+                        <div class="text-gray-300">Average Savings</div>
+                        <div class="text-gray-400 text-sm">Annual recurring</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-secondary/30">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6 text-accent">Ready to Transform Your Enterprise?</h2>
+                <p class="text-xl mb-8 text-gray-300">
+                    Join industry leaders who are already leveraging AI for competitive advantage. 
+                    Book a strategic consultation to explore how AI can transform your business.
+                </p>
+                <div class="glass p-8 rounded-xl mb-8">
+                    <h3 class="text-2xl font-bold text-accent mb-4">What You'll Get in Your Strategic Call:</h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <div class="text-accent mr-3">✅</div>
+                                <span class="text-white font-semibold">Custom AI Opportunity Assessment</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <div class="text-accent mr-3">✅</div>
+                                <span class="text-white font-semibold">ROI Projections for Your Industry</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <div class="text-accent mr-3">✅</div>
+                                <span class="text-white font-semibold">Implementation Roadmap</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <div class="text-accent mr-3">✅</div>
+                                <span class="text-white font-semibold">Technology Stack Recommendations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="bookStrategicCall()" class="bg-accent text-primary px-8 py-4 rounded-full text-xl font-bold hover:bg-accent-warm transition glow">
+                    📅 Book Strategic Consultation
+                </button>
+                <p class="text-gray-400 mt-4">
+                    💼 60-minute session • 💯 No obligation • 🎯 Actionable insights
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendly Widget Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2024 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | Enterprise AI Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        function bookStrategicCall() {
+            if (typeof Calendly !== 'undefined') {
+                Calendly.initPopupWidget({
+                    url: 'https://calendly.com/zubeid-hendricks/ai-strategy-consultation'
+                });
+            } else {
+                window.location.href = 'free-consultation.html';
+            }
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
