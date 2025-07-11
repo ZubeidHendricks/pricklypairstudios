@@ -203,6 +203,24 @@
                             </div>
                         </div>
 
+                        <div class="mt-6">
+                            <label class="block text-gray-300 mb-2">Phone Number (Optional)</label>
+                            <input type="tel" name="phone" 
+                                   class="w-full p-3 rounded-lg bg-secondary border border-accent/30 text-white focus:border-accent focus:outline-none"
+                                   placeholder="Enter your phone number">
+                        </div>
+
+                        <!-- SMS Consent Checkbox -->
+                        <div class="mt-6">
+                            <div class="flex items-start space-x-3">
+                                <input type="checkbox" id="smsConsent" name="smsConsent" required
+                                       class="mt-1 w-5 h-5 text-accent bg-secondary border border-accent/30 rounded focus:ring-accent focus:ring-2">
+                                <label for="smsConsent" class="text-gray-300 text-sm leading-relaxed">
+                                    <span class="text-accent">*</span> I agree to receive text messages from Prickly Pair Studios about my AI readiness assessment results and related services. Message & data rates may apply. Reply STOP to unsubscribe at any time.
+                                </label>
+                            </div>
+                        </div>
+
                         <button type="submit" class="w-full bg-accent text-primary py-4 rounded-lg font-bold text-lg hover:bg-accent-warm transition glow mt-8">
                             Start AI Assessment 🚀
                         </button>
@@ -398,6 +416,13 @@
         // Handle contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Check if SMS consent is checked
+            const smsConsent = document.getElementById('smsConsent');
+            if (!smsConsent.checked) {
+                alert('Please agree to receive text messages to continue with the assessment.');
+                return;
+            }
             
             const formData = new FormData(this);
             userInfo = Object.fromEntries(formData);
