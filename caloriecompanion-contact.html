@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support - CalorieCompanion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Navigation Section -->
+    <nav class="glass py-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                CalorieCompanion
+            </div>
+            <div class="space-x-6">
+                <a href="caloriecompanion-app.html" class="hover:text-accent transition">App</a>
+                <a href="caloriecompanion-support.html" class="hover:text-accent transition">Support</a>
+                <a href="caloriecompanion-privacy.html" class="hover:text-accent transition">Privacy</a>
+                <a href="index.html" class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition glow">Prickly Pair Studios</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <div class="pt-24 pb-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Header -->
+            <div class="glass p-8 rounded-2xl mb-8 text-center">
+                <h1 class="text-4xl font-bold mb-4 text-accent">Contact CalorieCompanion Support</h1>
+                <p class="text-lg text-gray-300">
+                    Get help with your CalorieCompanion app. We're here to assist you with any questions or issues.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Contact Form -->
+                <div class="glass p-8 rounded-2xl">
+                    <h2 class="text-3xl font-bold mb-6 text-accent">Send us a Message</h2>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 bg-secondary rounded-lg border border-gray-600 focus:border-accent focus:outline-none text-white">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 bg-secondary rounded-lg border border-gray-600 focus:border-accent focus:outline-none text-white">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject *</label>
+                            <select id="subject" name="subject" required 
+                                    class="w-full px-4 py-3 bg-secondary rounded-lg border border-gray-600 focus:border-accent focus:outline-none text-white">
+                                <option value="">Select a topic...</option>
+                                <option value="account">Account Issues</option>
+                                <option value="technical">Technical Problems</option>
+                                <option value="billing">Billing & Subscriptions</option>
+                                <option value="data">Data & Privacy</option>
+                                <option value="features">Feature Requests</option>
+                                <option value="feedback">General Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="device" class="block text-sm font-medium text-gray-300 mb-2">Device Information</label>
+                            <input type="text" id="device" name="device" placeholder="e.g., iPhone 14 Pro, Android Galaxy S24" 
+                                   class="w-full px-4 py-3 bg-secondary rounded-lg border border-gray-600 focus:border-accent focus:outline-none text-white">
+                        </div>
+                        
+                        <div>
+                            <label for="appVersion" class="block text-sm font-medium text-gray-300 mb-2">App Version</label>
+                            <input type="text" id="appVersion" name="appVersion" placeholder="e.g., 1.2.3 (found in Settings > About)" 
+                                   class="w-full px-4 py-3 bg-secondary rounded-lg border border-gray-600 focus:border-accent focus:outline-none text-white">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="6" required 
+                                      placeholder="Please describe your issue or question in detail..."
+                                      class="w-full px-4 py-3 bg-secondary rounded-lg border border-gray-600 focus:border-accent focus:outline-none text-white resize-none"></textarea>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <input type="checkbox" id="privacy" name="privacy" required 
+                                   class="mt-1 w-4 h-4 text-accent bg-secondary border-gray-600 rounded focus:ring-accent">
+                            <label for="privacy" class="text-sm text-gray-300">
+                                I agree to the <a href="caloriecompanion-privacy.html" class="text-accent hover:text-accent-warm transition">Privacy Policy</a> 
+                                and consent to my information being used to respond to this inquiry. *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-accent text-primary px-6 py-3 rounded-lg hover:bg-accent-warm transition glow font-semibold">
+                            Send Message
+                        </button>
+                        
+                        <div id="formMessage" class="hidden p-4 rounded-lg"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <!-- Direct Contact -->
+                    <div class="glass p-6 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent-warm">Direct Contact</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="text-accent text-xl">📧</div>
+                                <div>
+                                    <div class="font-semibold">Email Support</div>
+                                    <a href="mailto:pricklypairstudiosza@gmail.com" 
+                                       class="text-accent hover:text-accent-warm transition">pricklypairstudiosza@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="text-accent text-xl">⏱️</div>
+                                <div>
+                                    <div class="font-semibold">Response Time</div>
+                                    <div class="text-gray-300">Within 48 hours</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="text-accent text-xl">🌍</div>
+                                <div>
+                                    <div class="font-semibold">Location</div>
+                                    <div class="text-gray-300">Cape Town, South Africa</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Help -->
+                    <div class="glass p-6 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent-warm">Quick Help</h3>
+                        <div class="space-y-3">
+                            <a href="caloriecompanion-support.html" 
+                               class="block p-3 bg-secondary/50 rounded-lg hover:bg-secondary transition">
+                                <div class="font-semibold">📚 FAQ & Help Center</div>
+                                <div class="text-sm text-gray-400">Find answers to common questions</div>
+                            </a>
+                            <a href="caloriecompanion-data-deletion.html" 
+                               class="block p-3 bg-secondary/50 rounded-lg hover:bg-secondary transition">
+                                <div class="font-semibold">🗑️ Delete Account</div>
+                                <div class="text-sm text-gray-400">Request account and data deletion</div>
+                            </a>
+                            <a href="caloriecompanion-privacy.html" 
+                               class="block p-3 bg-secondary/50 rounded-lg hover:bg-secondary transition">
+                                <div class="font-semibold">🔒 Privacy Policy</div>
+                                <div class="text-sm text-gray-400">How we handle your data</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Emergency -->
+                    <div class="bg-accent-warm/20 border border-accent-warm/50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-3 text-accent-warm">🚨 Emergency Notice</h3>
+                        <p class="text-gray-300 text-sm">
+                            CalorieCompanion is not a medical device. For medical emergencies, contact emergency services immediately. 
+                            Our app provides general nutrition information only.
+                        </p>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="glass p-6 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent-warm">Support Hours</h3>
+                        <div class="space-y-2 text-gray-300">
+                            <div class="flex justify-between">
+                                <span>Monday - Friday</span>
+                                <span>9:00 AM - 5:00 PM SAST</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Weekend</span>
+                                <span>Limited support</span>
+                            </div>
+                            <div class="text-sm text-gray-400 mt-3">
+                                We respond to all emails within 48 hours, typically much faster during business hours.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2025 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | Developer of CalorieCompanion</p>
+            <div class="mt-4 space-x-4">
+                <a href="caloriecompanion-terms.html" class="text-sm text-gray-400 hover:text-accent transition">Terms</a>
+                <span class="text-gray-500">|</span>
+                <a href="caloriecompanion-privacy.html" class="text-sm text-gray-400 hover:text-accent transition">Privacy</a>
+                <span class="text-gray-500">|</span>
+                <a href="caloriecompanion-support.html" class="text-sm text-gray-400 hover:text-accent transition">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Simulate form submission (replace with actual endpoint)
+            setTimeout(() => {
+                // Show success message
+                const messageDiv = document.getElementById('formMessage');
+                messageDiv.className = 'p-4 rounded-lg bg-accent/20 text-accent';
+                messageDiv.textContent = 'Thank you! Your message has been sent. We\'ll respond within 48 hours.';
+                messageDiv.classList.remove('hidden');
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.classList.add('hidden');
+                }, 5000);
+                
+            }, 1000);
+        });
+        
+        // Auto-populate device info if possible
+        function detectDevice() {
+            const userAgent = navigator.userAgent;
+            let device = '';
+            
+            if (/iPhone/i.test(userAgent)) {
+                device = 'iPhone';
+            } else if (/iPad/i.test(userAgent)) {
+                device = 'iPad';
+            } else if (/Android/i.test(userAgent)) {
+                device = 'Android';
+            } else {
+                device = 'Desktop/Web';
+            }
+            
+            if (device !== 'Desktop/Web') {
+                document.getElementById('device').placeholder = `Detected: ${device} - Please specify model`;
+            }
+        }
+        
+        detectDevice();
+    </script>
+</body>
+</html>

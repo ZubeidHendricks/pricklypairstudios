@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Request - CalorieCompanion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Navigation Section -->
+    <nav class="glass py-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                CalorieCompanion
+            </div>
+            <div class="space-x-6">
+                <a href="caloriecompanion-app.html" class="hover:text-accent transition">App</a>
+                <a href="caloriecompanion-support.html" class="hover:text-accent transition">Support</a>
+                <a href="caloriecompanion-privacy.html" class="hover:text-accent transition">Privacy</a>
+                <a href="index.html" class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition glow">Prickly Pair Studios</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Data Deletion Content -->
+    <div class="pt-24 pb-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Header -->
+            <div class="glass p-8 rounded-2xl mb-8">
+                <h1 class="text-4xl font-bold mb-4 text-accent">Data Deletion Request</h1>
+                <p class="text-lg text-gray-300">
+                    Request the permanent deletion of your CalorieCompanion account and all associated data.
+                </p>
+            </div>
+
+            <!-- Warning Notice -->
+            <div class="bg-accent-warm/20 border border-accent-warm/50 p-6 rounded-xl mb-8">
+                <div class="flex items-start space-x-3">
+                    <div class="text-accent-warm text-2xl mt-1">⚠️</div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-accent-warm mb-2">Important: This Action Cannot Be Undone</h3>
+                        <p class="text-gray-300 mb-3">
+                            Once you request data deletion, your CalorieCompanion account and all associated data will be permanently removed from our systems within 30 days. This includes:
+                        </p>
+                        <ul class="list-disc ml-6 text-gray-300 space-y-1">
+                            <li>Your account profile and login credentials</li>
+                            <li>All meal logs and nutrition data</li>
+                            <li>Weight history and goal tracking</li>
+                            <li>Food photos and notes</li>
+                            <li>Progress reports and analytics</li>
+                            <li>Subscription information (billing handled by app stores)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Options Section -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- In-App Deletion -->
+                <div class="glass p-6 rounded-xl">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent">Option 1: Delete Through App</h2>
+                    <p class="text-gray-300 mb-4">
+                        The fastest way to delete your account is directly through the CalorieCompanion app:
+                    </p>
+                    <ol class="list-decimal ml-6 text-gray-300 space-y-2 mb-6">
+                        <li>Open CalorieCompanion on your device</li>
+                        <li>Go to <strong>Settings</strong> → <strong>Account</strong></li>
+                        <li>Scroll down and tap <strong>"Delete Account"</strong></li>
+                        <li>Enter your password to confirm your identity</li>
+                        <li>Review what will be deleted</li>
+                        <li>Tap <strong>"Permanently Delete Account"</strong></li>
+                        <li>Confirm your decision in the final prompt</li>
+                    </ol>
+                    <div class="bg-accent/10 p-4 rounded-lg">
+                        <p class="text-sm text-gray-300">
+                            <strong>Note:</strong> This process is immediate and secure. You'll receive a confirmation email once deletion is complete.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Email Request -->
+                <div class="glass p-6 rounded-xl">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent">Option 2: Email Request</h2>
+                    <p class="text-gray-300 mb-4">
+                        If you can't access the app, you can request deletion via email:
+                    </p>
+                    <div class="bg-secondary/50 p-4 rounded-lg mb-4">
+                        <p class="text-gray-300 mb-2"><strong>Send email to:</strong></p>
+                        <p class="text-accent font-mono text-lg">pricklypairstudiosza@gmail.com</p>
+                    </div>
+                    <p class="text-gray-300 mb-4"><strong>Include in your email:</strong></p>
+                    <ul class="list-disc ml-6 text-gray-300 space-y-2 mb-4">
+                        <li>Subject: "CalorieCompanion Data Deletion Request"</li>
+                        <li>Your registered email address</li>
+                        <li>Your CalorieCompanion username (if different)</li>
+                        <li>Reason for deletion (optional but helpful)</li>
+                        <li>Confirmation: "I request permanent deletion of my account and all data"</li>
+                    </ul>
+                    <div class="bg-accent/10 p-4 rounded-lg">
+                        <p class="text-sm text-gray-300">
+                            <strong>Processing Time:</strong> Email requests are processed within 48 hours. You'll receive confirmation once deletion is initiated.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What Gets Deleted -->
+            <div class="glass p-8 rounded-2xl mb-8">
+                <h2 class="text-3xl font-bold mb-6 text-accent">What Data Will Be Deleted</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-accent-warm">Personal Information</h3>
+                        <ul class="list-disc ml-6 text-gray-300 space-y-2">
+                            <li>Name, email address, and profile information</li>
+                            <li>Account credentials and login history</li>
+                            <li>Device identifiers linked to your account</li>
+                            <li>Communication preferences and settings</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-accent-warm">Health & Fitness Data</h3>
+                        <ul class="list-disc ml-6 text-gray-300 space-y-2">
+                            <li>All meal logs and food entries</li>
+                            <li>Weight history and body measurements</li>
+                            <li>Fitness goals and progress tracking</li>
+                            <li>Calorie intake and expenditure records</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-accent-warm">App Content</h3>
+                        <ul class="list-disc ml-6 text-gray-300 space-y-2">
+                            <li>Food photos and meal images</li>
+                            <li>Personal notes and comments</li>
+                            <li>Custom food entries you created</li>
+                            <li>App preferences and customizations</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-accent-warm">Analytics & Reports</h3>
+                        <ul class="list-disc ml-6 text-gray-300 space-y-2">
+                            <li>Progress reports and insights</li>
+                            <li>Usage statistics and app interactions</li>
+                            <li>Exported data files and backups</li>
+                            <li>Sync data across devices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What's NOT Deleted -->
+            <div class="bg-secondary/30 border border-gray-600 p-6 rounded-xl mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-accent-warm">What's NOT Deleted</h3>
+                <p class="text-gray-300 mb-3">
+                    Some information may be retained for legal, security, or operational purposes:
+                </p>
+                <ul class="list-disc ml-6 text-gray-300 space-y-2">
+                    <li><strong>Payment Records:</strong> Handled by Apple/Google - contact them directly</li>
+                    <li><strong>Anonymized Analytics:</strong> Aggregated data with no personal identifiers (retained up to 90 days)</li>
+                    <li><strong>Legal Records:</strong> If required by law or ongoing legal proceedings</li>
+                    <li><strong>Security Logs:</strong> Fraud prevention data (automatically expires after 90 days)</li>
+                    <li><strong>Support Communications:</strong> Previous support emails (unless specifically requested for deletion)</li>
+                </ul>
+            </div>
+
+            <!-- Timeline -->
+            <div class="glass p-8 rounded-2xl mb-8">
+                <h2 class="text-3xl font-bold mb-6 text-accent">Deletion Timeline</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-accent text-primary rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
+                        <div>
+                            <h4 class="text-lg font-semibold">Immediate (0-24 hours)</h4>
+                            <p class="text-gray-300">Account deactivated, app access disabled, deletion process initiated</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-accent text-primary rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
+                        <div>
+                            <h4 class="text-lg font-semibold">Within 7 Days</h4>
+                            <p class="text-gray-300">Personal data removed from active systems, backups marked for deletion</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-accent text-primary rounded-full w-8 h-8 flex items-center justify-center font-bold">3</div>
+                        <div>
+                            <h4 class="text-lg font-semibold">Within 30 Days</h4>
+                            <p class="text-gray-300">All data permanently deleted from all systems including backups</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-accent text-primary rounded-full w-8 h-8 flex items-center justify-center font-bold">✓</div>
+                        <div>
+                            <h4 class="text-lg font-semibold">Confirmation</h4>
+                            <p class="text-gray-300">You'll receive email confirmation when deletion is complete</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alternatives -->
+            <div class="glass p-8 rounded-2xl mb-8">
+                <h2 class="text-3xl font-bold mb-6 text-accent">Before You Delete - Consider These Alternatives</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-accent/10 p-4 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-2 text-accent-warm">Export Your Data First</h4>
+                        <p class="text-gray-300 text-sm">
+                            Download your health data before deletion. Go to Settings → Account → Export Data to save your progress history.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-accent/10 p-4 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-2 text-accent-warm">Temporary Deactivation</h4>
+                        <p class="text-gray-300 text-sm">
+                            Consider logging out instead of deleting. Your data will remain safe if you want to return later.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-accent/10 p-4 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-2 text-accent-warm">Privacy Settings</h4>
+                        <p class="text-gray-300 text-sm">
+                            Adjust privacy settings instead. You can limit data collection and disable analytics in Settings → Privacy.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-accent/10 p-4 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-2 text-accent-warm">Contact Support</h4>
+                        <p class="text-gray-300 text-sm">
+                            Having issues? Our support team can help resolve problems without needing to delete your account.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Confirmation -->
+            <div class="glass p-8 rounded-2xl">
+                <h2 class="text-3xl font-bold mb-6 text-accent">Ready to Delete?</h2>
+                
+                <p class="text-gray-300 mb-6">
+                    If you're certain you want to proceed with deleting your CalorieCompanion account and all data, choose one of the methods above. 
+                    Remember, this action cannot be undone.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <a href="mailto:pricklypairstudiosza@gmail.com?subject=CalorieCompanion%20Data%20Deletion%20Request&body=Hello,%0D%0A%0D%0AI%20request%20permanent%20deletion%20of%20my%20CalorieCompanion%20account%20and%20all%20associated%20data.%0D%0A%0D%0ARegistered%20Email:%20[Your%20Email]%0D%0AUsername:%20[Your%20Username]%0D%0A%0D%0AI%20understand%20this%20action%20cannot%20be%20undone.%0D%0A%0D%0AThank%20you." 
+                       class="bg-accent-warm text-primary px-6 py-3 rounded-lg font-semibold text-center hover:bg-accent-warm/90 transition">
+                        Send Deletion Request Email
+                    </a>
+                    <a href="caloriecompanion-support.html" 
+                       class="bg-accent text-primary px-6 py-3 rounded-lg font-semibold text-center hover:bg-accent/90 transition">
+                        Contact Support First
+                    </a>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-400">
+                        Need help with the deletion process? Email us at 
+                        <a href="mailto:pricklypairstudiosza@gmail.com" class="text-accent hover:text-accent-warm transition">pricklypairstudiosza@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2025 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | Developer of CalorieCompanion</p>
+            <div class="mt-4 space-x-4">
+                <a href="caloriecompanion-terms.html" class="text-sm text-gray-400 hover:text-accent transition">Terms</a>
+                <span class="text-gray-500">|</span>
+                <a href="caloriecompanion-privacy.html" class="text-sm text-gray-400 hover:text-accent transition">Privacy</a>
+                <span class="text-gray-500">|</span>
+                <a href="caloriecompanion-support.html" class="text-sm text-gray-400 hover:text-accent transition">Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

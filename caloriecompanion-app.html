@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalorieCompanion - Your Personal Nutrition Tracking App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+        
+        .app-screenshot {
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Navigation Section -->
+    <nav class="glass py-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                CalorieCompanion
+            </div>
+            <div class="space-x-6">
+                <a href="#features" class="hover:text-accent transition">Features</a>
+                <a href="#screenshots" class="hover:text-accent transition">Screenshots</a>
+                <a href="#download" class="hover:text-accent transition">Download</a>
+                <a href="caloriecompanion-support.html" class="hover:text-accent transition">Support</a>
+                <a href="index.html" class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition glow">Prickly Pair Studios</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="glass p-12 rounded-2xl max-w-5xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2 text-left">
+                        <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-accent">CalorieCompanion</h1>
+                        <p class="text-xl mb-4 text-accent-warm">Your Personal Nutrition Tracking App</p>
+                        <p class="text-lg mb-6 text-gray-300">
+                            Track calories, monitor nutrition, and achieve your health goals with the most intuitive and comprehensive calorie tracking app available.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <a href="#download" class="bg-accent text-primary px-8 py-4 rounded-full hover:bg-accent-warm transition glow font-semibold text-lg">
+                                Download Free
+                            </a>
+                            <a href="#features" class="border-2 border-accent text-accent px-8 py-4 rounded-full hover:bg-accent hover:text-primary transition font-semibold text-lg">
+                                Learn More
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-6 text-sm text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <span class="text-accent">⭐</span>
+                                <span>4.8/5 Rating</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-accent">📱</span>
+                                <span>iOS & Android</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-accent">🆓</span>
+                                <span>Free Download</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="relative">
+                            <div class="w-80 h-96 mx-auto bg-gradient-to-br from-accent/20 to-accent-warm/20 rounded-3xl flex items-center justify-center app-screenshot">
+                                <div class="text-6xl">📱</div>
+                            </div>
+                            <!-- Floating elements -->
+                            <div class="absolute -top-4 -left-4 bg-accent text-primary px-3 py-2 rounded-lg text-sm font-semibold">
+                                📊 Smart Analytics
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 bg-accent-warm text-primary px-3 py-2 rounded-lg text-sm font-semibold">
+                                🎯 Goal Tracking
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-accent">Powerful Features for Your Health Journey</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="glass p-8 rounded-xl feature-card">
+                    <div class="text-4xl mb-4">🍎</div>
+                    <h3 class="text-xl font-semibold mb-4 text-accent-warm">Smart Food Tracking</h3>
+                    <p class="text-gray-300">
+                        Easily log meals with our comprehensive food database. Scan barcodes, search by name, or create custom entries.
+                    </p>
+                </div>
+                
+                <div class="glass p-8 rounded-xl feature-card">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-4 text-accent-warm">Nutrition Analytics</h3>
+                    <p class="text-gray-300">
+                        Get detailed breakdowns of calories, macros, and micronutrients with beautiful charts and progress tracking.
+                    </p>
+                </div>
+                
+                <div class="glass p-8 rounded-xl feature-card">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold mb-4 text-accent-warm">Goal Setting</h3>
+                    <p class="text-gray-300">
+                        Set personalized calorie and nutrition goals based on your health objectives and track your progress daily.
+                    </p>
+                </div>
+                
+                <div class="glass p-8 rounded-xl feature-card">
+                    <div class="text-4xl mb-4">📷</div>
+                    <h3 class="text-xl font-semibold mb-4 text-accent-warm">Photo Food Diary</h3>
+                    <p class="text-gray-300">
+                        Take photos of your meals to create a visual food diary and easily remember what you ate.
+                    </p>
+                </div>
+                
+                <div class="glass p-8 rounded-xl feature-card">
+                    <div class="text-4xl mb-4">⚖️</div>
+                    <h3 class="text-xl font-semibold mb-4 text-accent-warm">Weight Tracking</h3>
+                    <p class="text-gray-300">
+                        Monitor your weight changes over time with detailed graphs and trend analysis.
+                    </p>
+                </div>
+                
+                <div class="glass p-8 rounded-xl feature-card">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-xl font-semibold mb-4 text-accent-warm">Device Sync</h3>
+                    <p class="text-gray-300">
+                        Sync seamlessly across all your devices and integrate with Apple Health and Google Fit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Features -->
+    <section class="py-20 bg-secondary/50">
+        <div class="container mx-auto px-4">
+            <div class="glass p-12 rounded-2xl max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8 text-accent">Premium Features</h2>
+                <p class="text-xl text-gray-300 mb-12">
+                    Unlock advanced features with CalorieCompanion Premium
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="text-left">
+                        <h3 class="text-2xl font-semibold mb-6 text-accent-warm">Advanced Analytics</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <span class="text-accent">✓</span>
+                                <span>Detailed nutrition trends and insights</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-accent">✓</span>
+                                <span>Custom macro goal tracking</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-accent">✓</span>
+                                <span>Meal pattern analysis</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-accent">✓</span>
+                                <span>Weekly and monthly reports</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-left">
+                        <h3 class="text-2xl font-semibold mb-6 text-accent-warm">Premium Tools</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <span class="text-accent">✓</span>
+                                <span>Recipe recommendations</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-accent">✓</span>
+                                <span>Unlimited photo storage</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-accent">✓</span>
+                                <span>Data export (PDF, CSV)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-accent">✓</span>
+                                <span>Priority customer support</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-lg text-gray-300 mb-6">Starting at $4.99/month</p>
+                    <a href="#download" class="bg-accent-warm text-primary px-8 py-4 rounded-full hover:bg-accent transition glow font-semibold text-lg">
+                        Try Premium Free
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-accent">See CalorieCompanion in Action</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-64 h-96 mx-auto bg-gradient-to-br from-accent/20 to-accent-warm/20 rounded-3xl flex items-center justify-center app-screenshot mb-6">
+                        <div class="text-6xl">🏠</div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-accent-warm">Dashboard</h3>
+                    <p class="text-gray-300">Clean, intuitive interface showing your daily progress at a glance</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-64 h-96 mx-auto bg-gradient-to-br from-accent/20 to-accent-warm/20 rounded-3xl flex items-center justify-center app-screenshot mb-6">
+                        <div class="text-6xl">🥗</div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-accent-warm">Food Logging</h3>
+                    <p class="text-gray-300">Easy meal logging with barcode scanning and photo capture</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-64 h-96 mx-auto bg-gradient-to-br from-accent/20 to-accent-warm/20 rounded-3xl flex items-center justify-center app-screenshot mb-6">
+                        <div class="text-6xl">📈</div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-accent-warm">Analytics</h3>
+                    <p class="text-gray-300">Detailed charts and insights to track your nutrition journey</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-20 bg-secondary/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-accent">What Users Are Saying</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">⭐⭐⭐⭐⭐</div>
+                        <span class="ml-2 text-gray-400">5/5</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        "The best calorie tracking app I've used! So easy to log meals and the analytics are incredibly helpful."
+                    </p>
+                    <div class="text-sm text-accent-warm">- Sarah M.</div>
+                </div>
+                
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">⭐⭐⭐⭐⭐</div>
+                        <span class="ml-2 text-gray-400">5/5</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        "Finally reached my weight goals thanks to CalorieCompanion. The photo diary feature is genius!"
+                    </p>
+                    <div class="text-sm text-accent-warm">- Mike R.</div>
+                </div>
+                
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">⭐⭐⭐⭐⭐</div>
+                        <span class="ml-2 text-gray-400">5/5</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        "Clean design, powerful features, and great customer support. Highly recommend!"
+                    </p>
+                    <div class="text-sm text-accent-warm">- Jessica L.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="glass p-12 rounded-2xl max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8 text-accent">Download CalorieCompanion Today</h2>
+                <p class="text-xl text-gray-300 mb-12">
+                    Start your nutrition journey with the most comprehensive calorie tracking app
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                    <a href="#" class="bg-primary border border-accent/50 px-8 py-4 rounded-xl hover:border-accent transition flex items-center gap-4">
+                        <div class="text-3xl">🍎</div>
+                        <div class="text-left">
+                            <div class="text-sm text-gray-400">Download on the</div>
+                            <div class="text-lg font-semibold text-accent">App Store</div>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="bg-primary border border-accent/50 px-8 py-4 rounded-xl hover:border-accent transition flex items-center gap-4">
+                        <div class="text-3xl">🤖</div>
+                        <div class="text-left">
+                            <div class="text-sm text-gray-400">Get it on</div>
+                            <div class="text-lg font-semibold text-accent">Google Play</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl mb-2">🆓</div>
+                        <div class="font-semibold text-accent-warm">Free Download</div>
+                        <div class="text-sm text-gray-400">No credit card required</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl mb-2">📱</div>
+                        <div class="font-semibold text-accent-warm">Universal App</div>
+                        <div class="text-sm text-gray-400">Works on iPhone & Android</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl mb-2">🔒</div>
+                        <div class="font-semibold text-accent-warm">Privacy First</div>
+                        <div class="text-sm text-gray-400">Your data stays secure</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass py-12 border-t border-accent/20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-bold text-accent mb-4 flex items-center">
+                        <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-6 h-6 mr-2">
+                        CalorieCompanion
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Your personal nutrition tracking companion for a healthier lifestyle.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-accent-warm mb-4">App</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#features" class="hover:text-accent transition">Features</a></li>
+                        <li><a href="#screenshots" class="hover:text-accent transition">Screenshots</a></li>
+                        <li><a href="#download" class="hover:text-accent transition">Download</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Premium</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-accent-warm mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="caloriecompanion-support.html" class="hover:text-accent transition">Help Center</a></li>
+                        <li><a href="caloriecompanion-support.html#contact" class="hover:text-accent transition">Contact Us</a></li>
+                        <li><a href="caloriecompanion-data-deletion.html" class="hover:text-accent transition">Delete Account</a></li>
+                        <li><a href="mailto:pricklypairstudiosza@gmail.com" class="hover:text-accent transition">Email Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-accent-warm mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="caloriecompanion-privacy.html" class="hover:text-accent transition">Privacy Policy</a></li>
+                        <li><a href="caloriecompanion-terms.html" class="hover:text-accent transition">Terms of Service</a></li>
+                        <li><a href="index.html" class="hover:text-accent transition">Prickly Pair Studios</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-accent/20 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 Prickly Pair Studios. All Rights Reserved.<br>
+                    Made with ❤️ in Cape Town, South Africa
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero animation
+        gsap.from(".glass", {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out"
+        });
+
+        // Feature cards animation
+        gsap.from(".feature-card", {
+            duration: 0.8,
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: "#features",
+                start: "top 80%"
+            }
+        });
+
+        // Screenshots animation
+        gsap.from(".app-screenshot", {
+            duration: 1,
+            scale: 0.8,
+            opacity: 0,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: "#screenshots",
+                start: "top 80%"
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & FAQ - CalorieCompanion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A0A0A',
+                        'secondary': '#1A1A1A',
+                        'accent': '#00D4FF',
+                        'accent-warm': '#FF6B35',
+                        'bg-neutral': '#111111',
+                        'text-light': '#E5E5E5'
+                    },
+                    fontFamily: {
+                        'body': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+        
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Navigation Section -->
+    <nav class="glass py-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold text-accent flex items-center">
+                <img src="prickly pair.png" alt="Prickly Pair Logo" class="w-8 h-8 mr-2">
+                CalorieCompanion
+            </div>
+            <div class="space-x-6">
+                <a href="caloriecompanion-app.html" class="hover:text-accent transition">App</a>
+                <a href="caloriecompanion-privacy.html" class="hover:text-accent transition">Privacy</a>
+                <a href="caloriecompanion-terms.html" class="hover:text-accent transition">Terms</a>
+                <a href="index.html" class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-accent-warm transition glow">Prickly Pair Studios</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Support Content -->
+    <div class="pt-24 pb-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Header -->
+            <div class="glass p-8 rounded-2xl mb-8">
+                <h1 class="text-4xl font-bold mb-4 text-accent">CalorieCompanion Support</h1>
+                <p class="text-lg text-gray-300">
+                    Need help with CalorieCompanion? Find answers to common questions below or contact our support team.
+                </p>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="glass p-6 rounded-xl hover:border-accent/50 transition cursor-pointer" onclick="scrollToSection('account')">
+                    <div class="text-accent text-3xl mb-3">👤</div>
+                    <h3 class="text-xl font-semibold mb-2">Account Help</h3>
+                    <p class="text-gray-300">Login issues, account deletion, data export</p>
+                </div>
+                <div class="glass p-6 rounded-xl hover:border-accent/50 transition cursor-pointer" onclick="scrollToSection('features')">
+                    <div class="text-accent text-3xl mb-3">📱</div>
+                    <h3 class="text-xl font-semibold mb-2">App Features</h3>
+                    <p class="text-gray-300">How to use tracking, goals, and premium features</p>
+                </div>
+                <div class="glass p-6 rounded-xl hover:border-accent/50 transition cursor-pointer" onclick="scrollToSection('contact')">
+                    <div class="text-accent text-3xl mb-3">💬</div>
+                    <h3 class="text-xl font-semibold mb-2">Contact Us</h3>
+                    <p class="text-gray-300">Get direct help from our support team</p>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="glass p-8 rounded-2xl mb-8">
+                <h2 class="text-3xl font-bold mb-8 text-accent">Frequently Asked Questions</h2>
+
+                <!-- Account & Setup -->
+                <div id="account" class="mb-8">
+                    <h3 class="text-2xl font-semibold mb-6 text-accent-warm">Account & Setup</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">How do I create an account?</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                1. Download CalorieCompanion from the App Store or Google Play<br>
+                                2. Open the app and tap "Sign Up"<br>
+                                3. Enter your email, create a password, and add basic information<br>
+                                4. Verify your email address<br>
+                                5. Set your health goals and preferences
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">I forgot my password. How do I reset it?</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                1. Tap "Forgot Password?" on the login screen<br>
+                                2. Enter your email address<br>
+                                3. Check your email for a password reset link<br>
+                                4. Follow the link to create a new password<br>
+                                5. Log in with your new password
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">How do I delete my account and data?</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                1. Go to Settings → Account → Delete Account<br>
+                                2. Confirm your identity with your password<br>
+                                3. Review what will be deleted<br>
+                                4. Tap "Permanently Delete Account"<br>
+                                5. Your account and all data will be removed within 30 days<br><br>
+                                You can also email us at <a href="mailto:pricklypairstudiosza@gmail.com" class="text-accent">pricklypairstudiosza@gmail.com</a> for assistance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features & Usage -->
+                <div id="features" class="mb-8">
+                    <h3 class="text-2xl font-semibold mb-6 text-accent-warm">Features & Usage</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">How do I log my meals and track calories?</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                1. Tap the "+" button on the home screen<br>
+                                2. Choose "Add Meal" or "Add Food"<br>
+                                3. Search for food items or scan barcodes<br>
+                                4. Adjust serving sizes as needed<br>
+                                5. Save to your diary<br><br>
+                                Pro tip: You can also take photos of your meals to remember what you ate!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">How accurate is the calorie counting?</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                CalorieCompanion uses comprehensive food databases including USDA data for accuracy. However, calorie counts can vary due to:<br>
+                                • Food preparation methods<br>
+                                • Brand variations<br>
+                                • Serving size estimation<br><br>
+                                We recommend using the data as a helpful guide rather than absolute truth. For medical purposes, consult healthcare professionals.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">Can I sync with Apple Health or Google Fit?</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                Yes! To sync with health platforms:<br>
+                                1. Go to Settings → Health Integration<br>
+                                2. Choose Apple Health (iOS) or Google Fit (Android)<br>
+                                3. Grant necessary permissions<br>
+                                4. Select what data to sync (weight, activities, etc.)<br><br>
+                                This allows CalorieCompanion to automatically import your exercise data and sync your weight changes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">What's included in the premium subscription?</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                Premium features include:<br>
+                                • Advanced nutrition insights and trends<br>
+                                • Custom macro goals and tracking<br>
+                                • Detailed progress reports and analytics<br>
+                                • Recipe recommendations based on your goals<br>
+                                • Unlimited meal photos and notes<br>
+                                • Priority customer support<br>
+                                • Export detailed reports (PDF, CSV)<br>
+                                • Ad-free experience
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold mb-6 text-accent-warm">Troubleshooting</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">The app is running slowly or crashing</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                Try these troubleshooting steps:<br>
+                                1. Close and reopen the app<br>
+                                2. Restart your device<br>
+                                3. Update to the latest app version<br>
+                                4. Clear app cache (Android) or reinstall (iOS)<br>
+                                5. Ensure you have enough storage space<br><br>
+                                If issues persist, contact support with your device model and iOS/Android version.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">My data isn't syncing across devices</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                To ensure data syncs properly:<br>
+                                1. Check that you're logged into the same account on both devices<br>
+                                2. Ensure both devices have internet connection<br>
+                                3. Go to Settings → Sync → Sync Now<br>
+                                4. Allow a few minutes for sync to complete<br>
+                                5. Try logging out and back in if sync still fails<br><br>
+                                Data is automatically backed up when you're connected to WiFi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">I can't find a specific food in the database</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                If you can't find a food:<br>
+                                1. Try different search terms or brand names<br>
+                                2. Search for generic terms (e.g., "chicken breast" instead of specific brand)<br>
+                                3. Use the barcode scanner for packaged foods<br>
+                                4. Create a custom food entry with nutritional info from the package<br>
+                                5. Request new foods through Settings → Suggest Food<br><br>
+                                We regularly update our food database with user suggestions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy & Data -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold mb-6 text-accent-warm">Privacy & Data</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">Is my health data private and secure?</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                Yes! Your privacy is our top priority:<br>
+                                • All data is encrypted in transit and at rest<br>
+                                • We never sell your personal or health data<br>
+                                • You control what data is shared and with whom<br>
+                                • Data is stored securely and backed up regularly<br>
+                                • You can export or delete your data anytime<br><br>
+                                Read our full <a href="caloriecompanion-privacy.html" class="text-accent">Privacy Policy</a> for complete details.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question py-4 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-medium">How do I export my data?</span>
+                            <span class="text-accent text-xl">+</span>
+                        </div>
+                        <div class="faq-answer pb-4">
+                            <p class="text-gray-300 ml-4">
+                                To export your data:<br>
+                                1. Go to Settings → Account → Export Data<br>
+                                2. Choose your preferred format (CSV, JSON, or PDF)<br>
+                                3. Select date range and data types<br>
+                                4. Tap "Generate Export"<br>
+                                5. Download the file or have it emailed to you<br><br>
+                                Exports include your meals, weight history, goals, and progress data.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="contact" class="glass p-8 rounded-2xl">
+                <h2 class="text-3xl font-bold mb-6 text-accent">Still Need Help?</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-accent-warm">Contact Support</h3>
+                        <div class="space-y-3">
+                            <p class="text-gray-300">
+                                <strong>Email:</strong> <a href="mailto:pricklypairstudiosza@gmail.com" class="text-accent hover:text-accent-warm transition">pricklypairstudiosza@gmail.com</a>
+                            </p>
+                            <p class="text-gray-300">
+                                <strong>Response Time:</strong> Within 48 hours
+                            </p>
+                            <p class="text-gray-300">
+                                <strong>Languages:</strong> English
+                            </p>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-accent/10 rounded-lg">
+                            <p class="text-sm text-gray-300">
+                                <strong>When contacting support, please include:</strong><br>
+                                • Your device model and operating system<br>
+                                • App version number<br>
+                                • Detailed description of the issue<br>
+                                • Screenshots if applicable
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-accent-warm">Quick Actions</h3>
+                        <div class="space-y-3">
+                            <a href="caloriecompanion-data-deletion.html" class="block p-3 glass rounded-lg hover:border-accent/50 transition">
+                                <div class="font-semibold">Request Data Deletion</div>
+                                <div class="text-sm text-gray-400">Permanently delete your account and data</div>
+                            </a>
+                            <a href="caloriecompanion-privacy.html" class="block p-3 glass rounded-lg hover:border-accent/50 transition">
+                                <div class="font-semibold">Privacy Policy</div>
+                                <div class="text-sm text-gray-400">How we handle your data</div>
+                            </a>
+                            <a href="caloriecompanion-terms.html" class="block p-3 glass rounded-lg hover:border-accent/50 transition">
+                                <div class="font-semibold">Terms of Service</div>
+                                <div class="text-sm text-gray-400">App usage terms and conditions</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass py-8 border-t border-accent/20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2025 Prickly Pair Studios. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Cape Town, South Africa | Developer of CalorieCompanion</p>
+            <div class="mt-4 space-x-4">
+                <a href="caloriecompanion-terms.html" class="text-sm text-gray-400 hover:text-accent transition">Terms</a>
+                <span class="text-gray-500">|</span>
+                <a href="caloriecompanion-privacy.html" class="text-sm text-gray-400 hover:text-accent transition">Privacy</a>
+                <span class="text-gray-500">|</span>
+                <a href="caloriecompanion-support.html" class="text-sm text-gray-400 hover:text-accent transition">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span:last-child');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.faq-question span:last-child').forEach(item => {
+                if (item !== icon) {
+                    item.textContent = '+';
+                }
+            });
+            
+            // Toggle current item
+            answer.classList.toggle('active');
+            icon.textContent = answer.classList.contains('active') ? '−' : '+';
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    </script>
+</body>
+</html>
